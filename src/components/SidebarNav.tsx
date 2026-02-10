@@ -32,7 +32,7 @@ const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) 
         </div>
       </div>
 
-      <nav className="flex-1 py-3 overflow-y-auto scrollbar-thin">
+      <nav className="flex-1 py-3 overflow-y-auto scrollbar-thin" onWheel={(e) => e.stopPropagation()}>
         {grouped.map(([category, items]) => (
           <div key={category} className="mb-2">
             <div className="px-4 py-2">
