@@ -19,7 +19,7 @@ const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) 
   }, [modules]);
 
   return (
-    <aside className="w-72 min-h-screen bg-sidebar border-r border-sidebar-border flex flex-col shrink-0">
+    <aside className="w-72 h-screen bg-sidebar border-r border-sidebar-border flex flex-col shrink-0 overflow-hidden">
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SidebarNav from "@/components/SidebarNav";
 import ModuleContent from "@/components/ModuleContent";
 import { modules } from "@/data/modules";
@@ -7,6 +7,15 @@ import { Menu, X } from "lucide-react";
 const Index = () => {
   const [activeModule, setActiveModule] = useState(modules[0].id);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [sidebarOpen]);
 
   const currentModuleIndex = modules.findIndex((m) => m.id === activeModule);
   const currentModule = modules[currentModuleIndex];
