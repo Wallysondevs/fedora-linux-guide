@@ -15,7 +15,7 @@
     --popover: 220 18% 13%;
     --popover-foreground: 210 20% 90%;
 
-    --primary: 340 65% 47%;
+    --primary: 214 60% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 18%;
@@ -24,7 +24,7 @@
     --muted: 220 15% 16%;
     --muted-foreground: 215 15% 55%;
 
-    --accent: 340 65% 47%;
+    --accent: 214 60% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
@@ -32,7 +32,7 @@
 
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 340 65% 47%;
+    --ring: 214 60% 50%;
 
     --radius: 0.5rem;
 
@@ -40,9 +40,9 @@
     --terminal-bg: 220 25% 8%;
     --terminal-border: 220 15% 18%;
     
-    --debian-red: 340 65% 47%;
-    --debian-dark-red: 340 70% 35%;
-    --debian-light-red: 340 55% 65%;
+    --fedora-blue: 214 60% 50%;
+    --fedora-dark-blue: 214 65% 35%;
+    --fedora-light-blue: 214 55% 65%;
 
     --success: 142 50% 45%;
     --warning: 38 90% 55%;
@@ -50,12 +50,12 @@
 
     --sidebar-background: 220 22% 8%;
     --sidebar-foreground: 210 15% 70%;
-    --sidebar-primary: 340 65% 47%;
+    --sidebar-primary: 214 60% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 18% 14%;
     --sidebar-accent-foreground: 210 20% 90%;
     --sidebar-border: 220 15% 16%;
-    --sidebar-ring: 340 65% 47%;
+    --sidebar-ring: 214 60% 50%;
   }
 }
 
@@ -107,7 +107,7 @@
 }
 
 .code-block .prompt {
-  color: hsl(var(--debian-light-red));
+  color: hsl(var(--fedora-light-blue));
   user-select: none;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .code-block .path {
-  color: hsl(var(--debian-light-red));
+  color: hsl(var(--fedora-light-blue));
 }
 
 /* Glow effects */

@@ -23,10 +23,10 @@ const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) 
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-            D
+            F
           </div>
           <div>
-            <h1 className="text-sm font-bold text-sidebar-accent-foreground tracking-tight">Debian Linux</h1>
+            <h1 className="text-sm font-bold text-sidebar-accent-foreground tracking-tight">Fedora Linux</h1>
             <p className="text-xs text-sidebar-foreground">Guia Completo</p>
           </div>
         </div>
@@ -65,7 +65,7 @@ const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) 
 
       <div className="p-4 border-t border-sidebar-border">
         <div className="text-[10px] text-muted-foreground text-center">
-          Debian Linux — Guia Universitário v2.0
+          Fedora Linux — Guia Universitário v2.0
         </div>
       </div>
     </aside>

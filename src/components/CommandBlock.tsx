@@ -9,7 +9,7 @@ const CommandBlock = ({ command }: CommandBlockProps) => {
     <div className="mb-6 animate-fade-in">
       <div className="code-block p-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-[hsl(var(--debian-light-red))] font-mono text-xs font-semibold tracking-wider uppercase">
+          <span className="text-fedora-light-blue font-mono text-xs font-semibold tracking-wider uppercase">
             Comando
           </span>
         </div>
