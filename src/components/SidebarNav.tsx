@@ -1,13 +1,15 @@
 import { Module } from "@/types/module";
 import { useMemo } from "react";
+import { X } from "lucide-react";
 
 interface SidebarNavProps {
   modules: Module[];
   activeModule: string;
   onSelectModule: (id: string) => void;
+  onClose?: () => void;
 }
 
-const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) => {
+const SidebarNav = ({ modules, activeModule, onSelectModule, onClose }: SidebarNavProps) => {
   const grouped = useMemo(() => {
     const map = new Map<string, { module: Module; globalIndex: number }[]>();
     modules.forEach((module, index) => {
@@ -19,16 +21,28 @@ const SidebarNav = ({ modules, activeModule, onSelectModule }: SidebarNavProps) 
   }, [modules]);
 
   return (
-    <aside className="w-72 h-screen bg-sidebar border-r border-sidebar-border flex flex-col shrink-0 overflow-hidden">
-      <div className="p-5 border-b border-sidebar-border">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-            F
+    <aside className="w-[84vw] max-w-72 h-dvh bg-sidebar border-r border-sidebar-border flex flex-col shrink-0 overflow-hidden">
+      <div className="p-4 lg:p-5 border-b border-sidebar-border pt-[max(1rem,env(safe-area-inset-top))]">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
+              F
+            </div>
+            <div>
+              <h1 className="text-sm font-bold text-sidebar-accent-foreground tracking-tight">Fedora Linux</h1>
+              <p className="text-xs text-sidebar-foreground">Guia Completo</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-sm font-bold text-sidebar-accent-foreground tracking-tight">Fedora Linux</h1>
-            <p className="text-xs text-sidebar-foreground">Guia Completo</p>
-          </div>
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="lg:hidden w-8 h-8 rounded-md border border-sidebar-border text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent transition-colors flex items-center justify-center"
+              aria-label="Fechar menu"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
       </div>
 

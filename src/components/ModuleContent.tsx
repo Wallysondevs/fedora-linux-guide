@@ -12,8 +12,8 @@ interface ModuleContentProps {
 
 const ModuleContent = ({ module, moduleIndex, totalModules, onNavigate }: ModuleContentProps) => {
   return (
-    <div className="flex-1 overflow-y-auto">
-      <div className="max-w-3xl mx-auto px-8 py-10">
+    <div className="min-w-0 flex-1 overflow-y-auto">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-20 lg:pt-10">
         {/* Header */}
         <div className="mb-8 animate-fade-in">
           <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono mb-1">
@@ -25,12 +25,12 @@ const ModuleContent = ({ module, moduleIndex, totalModules, onNavigate }: Module
             <span>{String(totalModules).padStart(2, "0")}</span>
           </div>
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">{module.icon}</span>
-            <h1 className="text-3xl font-extrabold text-foreground tracking-tight">
+            <span className="text-2xl sm:text-3xl">{module.icon}</span>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
               {module.title}
             </h1>
           </div>
-          <p className="text-muted-foreground text-lg">{module.description}</p>
+          <p className="text-muted-foreground text-base sm:text-lg">{module.description}</p>
         </div>
 
         {/* Theory section */}
