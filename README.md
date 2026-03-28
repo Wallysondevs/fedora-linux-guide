@@ -1,36 +1,43 @@
-# Guia Fedora Linux
+# Guia Completo do Fedora Linux
 
-Projeto web educacional com trilha completa para estudo de Fedora Linux.
+  Guia educativo interativo sobre Fedora Linux em Português Brasileiro.
 
-## Requisitos
+  🌐 **[Acesse o guia online](https://wallysondevs.github.io/fedora-linux-guide/)**
 
-- Node.js 18+ (recomendado: versão LTS)
-- npm
+  ## Conteúdo
 
-## Desenvolvimento local
+  O guia cobre 31 tópicos organizados em seções:
 
-```sh
-npm install
-npm run dev
-```
+  - **Introdução** — História, instalação e primeiros passos
+  - **Gerenciamento de Pacotes** — DNF, Flatpak, RPM e atualizações
+  - **Interface e Terminal** — GNOME, terminal, pipes, shell scripting
+  - **Sistema de Arquivos** — Navegação, manipulação, visualização de arquivos
+  - **Administração** — Usuários, permissões, processos, SSH, firewall
+  - **Desenvolvimento** — Ambiente de dev e containers com Podman
+  - **Extras** — Segurança, troubleshooting, dicas e referências
 
-## Build de produção
+  ## Tecnologias
 
-```sh
-npm run build
-npm run preview
-```
+  - React 19 + TypeScript
+  - Vite 7
+  - Tailwind CSS 4
+  - Framer Motion
+  - Wouter (hash routing)
 
-## Testes
+  ## Executar localmente
 
-```sh
-npm run test
-```
+  ```bash
+  # Instalar dependências
+  pnpm install
 
-## Stack
+  # Servidor de desenvolvimento
+  pnpm dev
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+  # Build de produção
+  pnpm build
+  ```
+
+  ## Licença
+
+  MIT
+  
