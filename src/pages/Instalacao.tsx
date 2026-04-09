@@ -1,309 +1,264 @@
 import { PageContainer } from "@/components/layout/PageContainer";
   import { CodeBlock } from "@/components/ui/CodeBlock";
   import { AlertBox } from "@/components/ui/AlertBox";
-  import { Download, HardDrive, CheckCircle, Monitor, Usb, Settings } from "lucide-react";
+  import { Download, HardDrive, Monitor, Shield, CheckCircle, Settings, Usb, AlertTriangle } from "lucide-react";
 
   export default function Instalacao() {
     return (
       <PageContainer
         title="Instalação do Fedora"
-        subtitle="Passo a passo completo para instalar o Fedora Workstation do zero — desde o download até o primeiro boot."
+        subtitle="Guia passo a passo completo para instalar o Fedora Linux no seu computador, incluindo dual boot, UEFI e troubleshooting."
         difficulty="iniciante"
-        timeToRead="35 min"
+        timeToRead="40 min"
       >
-        <h2><Download className="inline-block mr-2 mb-1 w-5 h-5" /> Baixando o Fedora</h2>
-        <p>Acesse <strong>getfedora.org</strong> e baixe a imagem ISO do <strong>Fedora Workstation</strong> (a edição desktop com GNOME). A imagem tem cerca de 2 GB.</p>
+        <h2><Download className="inline-block mr-2 mb-1 w-5 h-5" /> Requisitos do Sistema</h2>
+        <p>
+          Antes de instalar, verifique se seu computador atende aos requisitos mínimos. O Fedora Workstation com GNOME é relativamente leve, mas ter hardware adequado garante uma experiência fluida.
+        </p>
+        <table>
+          <thead><tr><th>Componente</th><th>Mínimo</th><th>Recomendado</th><th>Ideal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Processador</strong></td><td>2 GHz dual-core</td><td>Quad-core 64-bit</td><td>8+ cores moderno</td></tr>
+            <tr><td><strong>Memória RAM</strong></td><td>2 GB</td><td>4 GB</td><td>8-16 GB</td></tr>
+            <tr><td><strong>Disco</strong></td><td>15 GB</td><td>40 GB</td><td>100+ GB SSD</td></tr>
+            <tr><td><strong>Placa de vídeo</strong></td><td>Compatível com VESA</td><td>Intel/AMD com drivers open source</td><td>AMD/NVIDIA recente</td></tr>
+            <tr><td><strong>USB</strong></td><td>Pen drive 4 GB+</td><td>Pen drive 8 GB+ USB 3.0</td><td>USB 3.0 rápido</td></tr>
+          </tbody>
+        </table>
 
-        <AlertBox type="info" title="Qual edição baixar?">
-          Para uso desktop, baixe <strong>Fedora Workstation</strong>. Para servidores, use o <strong>Fedora Server</strong>. Para experimentar um desktop imutável, tente o <strong>Fedora Silverblue</strong>. Para outro ambiente desktop (KDE, Xfce), baixe a Spin correspondente.
-        </AlertBox>
-
-        <h3>Verificando a Integridade da ISO</h3>
-        <p>Após o download, verifique se o arquivo não está corrompido. O site do Fedora fornece o checksum SHA-256:</p>
+        <h2><Download className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 1: Baixar a ISO</h2>
+        <p>
+          Acesse o site oficial do Fedora para baixar a imagem ISO. Existem várias opções dependendo do seu uso:
+        </p>
+        <ul>
+          <li><strong>Fedora Workstation</strong> — Para uso no desktop com GNOME (escolha padrão)</li>
+          <li><strong>Fedora KDE Spin</strong> — Se preferir o KDE Plasma</li>
+          <li><strong>Fedora Server</strong> — Sem interface gráfica, para servidores</li>
+          <li><strong>Fedora Everything</strong> — ISO de instalação por rede (netinstall)</li>
+        </ul>
         <CodeBlock
-          code={`# Baixar o arquivo de checksums do site do Fedora
-  # (disponível na mesma página de download)
+          code={`# Site oficial para download:
+  # https://fedoraproject.org/workstation/download
 
-  # Verificar o hash SHA-256 da ISO baixada
-  sha256sum Fedora-Workstation-Live-x86_64-41-1.4.iso
+  # Download via terminal (wget ou curl):
+  wget https://download.fedoraproject.org/pub/fedora/linux/releases/41/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-41-1.4.iso
 
-  # Comparar a saída com o valor fornecido no site
-  # Se forem iguais, a ISO está íntegra
+  # Ou com curl:
+  curl -LO https://download.fedoraproject.org/pub/fedora/linux/releases/41/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-41-1.4.iso`}
+          language="bash"
+          title="download da ISO"
+        />
 
-  # Verificar com o arquivo CHECKSUM (se baixou junto)
-  sha256sum -c Fedora-Workstation-41-1.4-x86_64-CHECKSUM`}
+        <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 2: Verificar a ISO (Integridade)</h2>
+        <p>
+          <strong>Nunca pule esta etapa!</strong> Verificar a integridade da ISO garante que o download não foi corrompido e que o arquivo é autêntico. Uma ISO corrompida pode causar erros durante a instalação ou comprometer a segurança.
+        </p>
+        <CodeBlock
+          code={`# Baixar o arquivo de checksum
+  wget https://download.fedoraproject.org/pub/fedora/linux/releases/41/Workstation/x86_64/iso/Fedora-Workstation-41-1.4-x86_64-CHECKSUM
+
+  # Verificar a assinatura GPG do checksum
+  curl -O https://fedoraproject.org/fedora.gpg
+  gpg --import fedora.gpg
+  gpg --verify-files *-CHECKSUM
+
+  # Verificar o checksum SHA256 da ISO
+  sha256sum -c *-CHECKSUM
+  # Fedora-Workstation-Live-x86_64-41-1.4.iso: OK
+
+  # Método rápido (calcular hash e comparar manualmente):
+  sha256sum Fedora-Workstation-Live-x86_64-41-1.4.iso`}
           language="bash"
           title="verificação de integridade"
         />
 
-        <h2><Usb className="inline-block mr-2 mb-1 w-5 h-5" /> Criando o Pendrive Bootável</h2>
-        <p>Você precisa de um pendrive com pelo menos <strong>4 GB</strong>. Todos os dados do pendrive serão apagados.</p>
+        <AlertBox type="warning" title="ISO corrompida?">
+          Se o checksum não bater, <strong>não use a ISO</strong>. Baixe novamente de outro mirror ou diretamente do site oficial. ISOs corrompidas podem causar falhas de instalação ou problemas de segurança.
+        </AlertBox>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-          <div className="p-4 border border-border rounded-xl bg-card">
-            <h4 className="font-bold mb-2 mt-0 border-0">Fedora Media Writer</h4>
-            <p className="text-sm text-muted-foreground mb-1">Ferramenta oficial do Fedora. A mais simples e confiável.</p>
-            <p className="text-xs text-muted-foreground">Windows, macOS e Linux (Flathub)</p>
-          </div>
-          <div className="p-4 border border-border rounded-xl bg-card">
-            <h4 className="font-bold mb-2 mt-0 border-0">Balena Etcher</h4>
-            <p className="text-sm text-muted-foreground mb-1">Alternativa popular, interface drag-and-drop.</p>
-            <p className="text-xs text-muted-foreground">Disponível em balena.io/etcher</p>
-          </div>
-          <div className="p-4 border border-border rounded-xl bg-card">
-            <h4 className="font-bold mb-2 mt-0 border-0">Ventoy</h4>
-            <p className="text-sm text-muted-foreground mb-1">Permite múltiplas ISOs no mesmo pendrive. Basta copiar a ISO para o pendrive.</p>
-            <p className="text-xs text-muted-foreground">ventoy.net — multiplataforma</p>
-          </div>
-          <div className="p-4 border border-border rounded-xl bg-card">
-            <h4 className="font-bold mb-2 mt-0 border-0">dd (Linux/macOS)</h4>
-            <p className="text-sm text-muted-foreground mb-1">Método via terminal. Poderoso mas exige cuidado.</p>
-            <p className="text-xs text-muted-foreground">Nativo no Linux e macOS</p>
-          </div>
-        </div>
+        <h2><Usb className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 3: Criar Pen Drive Bootável</h2>
+        <p>
+          Você precisa gravar a ISO em um pen drive para iniciar a instalação. Existem várias ferramentas disponíveis:
+        </p>
 
-        <h3>Método via Terminal (dd)</h3>
+        <h3>No Linux</h3>
         <CodeBlock
-          code={`# PRIMEIRO: identifique seu pendrive (NÃO o disco do sistema!)
+          code={`# Método 1: Fedora Media Writer (recomendado pelo projeto Fedora)
+  sudo dnf install mediawriter
+  # Abra o aplicativo e siga as instruções gráficas
+
+  # Método 2: Comando dd (avançado — cuidado com o dispositivo!)
+  # Primeiro, identifique o pen drive:
   lsblk
-  # Procure o dispositivo pelo tamanho (ex: /dev/sdb com 16G)
+  # NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+  # sda      8:0    0 256.0G  0 disk
+  # ├─sda1   8:1    0   512M  0 part /boot/efi
+  # └─sda2   8:2    0 255.5G  0 part /
+  # sdb      8:16   1  14.9G  0 disk    ← este é o pen drive!
 
-  # Desmontar o pendrive se estiver montado
-  sudo umount /dev/sdX*
+  # Gravar a ISO (substitua /dev/sdX pelo dispositivo correto!)
+  sudo dd if=Fedora-Workstation-Live-x86_64-41-1.4.iso of=/dev/sdb bs=4M status=progress oflag=sync
 
-  # Criar o pendrive bootável
-  # CUIDADO: substitua /dev/sdX pelo seu pendrive (ex: /dev/sdb)
-  # NÃO use partições (sdb1), use o disco inteiro (sdb)
-  sudo dd if=Fedora-Workstation-Live-x86_64-41-1.4.iso of=/dev/sdX bs=4M status=progress oflag=sync
-
-  # Saída esperada:
-  # 2147483648 bytes (2,1 GB) copied, 120 s, 17,9 MB/s
-  # Quando terminar, o pendrive está pronto`}
+  # Método 3: Ventoy (permite múltiplas ISOs no mesmo pen drive)
+  # Instale o Ventoy uma vez, depois basta copiar ISOs para o pen drive`}
           language="bash"
-          title="criando pendrive com dd"
+          title="criar pen drive no Linux"
         />
 
-        <AlertBox type="danger" title="Cuidado com o dd!">
-          O <code>dd</code> não pede confirmação. Se você especificar o disco errado (ex: <code>/dev/sda</code> que é seu HD), vai apagar todo o sistema. Sempre confirme o dispositivo com <code>lsblk</code> antes de executar.
+        <h3>No Windows</h3>
+        <ul>
+          <li><strong>Fedora Media Writer</strong> — Baixe em fedoraproject.org, instale e siga o assistente</li>
+          <li><strong>Rufus</strong> — Ferramenta popular para Windows. Use modo DD se o modo ISO não funcionar</li>
+          <li><strong>balenaEtcher</strong> — Interface simples, selecione a ISO e o pen drive</li>
+          <li><strong>Ventoy</strong> — Instale uma vez, depois só copie ISOs para o pen drive</li>
+        </ul>
+
+        <AlertBox type="danger" title="CUIDADO com dd!">
+          O comando <code>dd</code> grava diretamente no dispositivo sem confirmação. Se você errar o dispositivo de destino (usar <code>/dev/sda</code> em vez de <code>/dev/sdb</code>), vai apagar seu disco principal! Sempre confirme com <code>lsblk</code> antes.
         </AlertBox>
 
-        <h2>Configurando o Boot pelo Pendrive</h2>
-        <p>Para iniciar pelo pendrive, você precisa acessar o menu de boot do BIOS/UEFI:</p>
+        <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 4: Configurar BIOS/UEFI</h2>
+        <p>
+          Para iniciar pelo pen drive, você precisa configurar a ordem de boot na BIOS/UEFI:
+        </p>
+        <ul>
+          <li>Reinicie o computador e pressione a tecla de acesso à BIOS (geralmente <strong>F2</strong>, <strong>F12</strong>, <strong>DEL</strong> ou <strong>ESC</strong>)</li>
+          <li>Procure a seção "Boot Order" ou "Boot Priority"</li>
+          <li>Coloque o USB como primeiro dispositivo de boot</li>
+          <li>Se existir a opção <strong>Secure Boot</strong>, deixe habilitado — o Fedora suporta Secure Boot nativamente</li>
+          <li>Salve e reinicie (<strong>F10</strong> na maioria das BIOS)</li>
+        </ul>
+
         <table>
-          <thead>
-            <tr><th>Fabricante</th><th>Tecla de Boot Menu</th><th>Tecla de BIOS/UEFI</th></tr>
-          </thead>
+          <thead><tr><th>Fabricante</th><th>Tecla de Boot Menu</th><th>Tecla de BIOS</th></tr></thead>
           <tbody>
+            <tr><td>ASUS</td><td>F8</td><td>F2 ou DEL</td></tr>
             <tr><td>Dell</td><td>F12</td><td>F2</td></tr>
-            <tr><td>HP</td><td>F9</td><td>F10 ou ESC</td></tr>
-            <tr><td>Lenovo</td><td>F12</td><td>F2 ou Fn+F2</td></tr>
-            <tr><td>ASUS</td><td>F8 ou ESC</td><td>F2 ou Del</td></tr>
-            <tr><td>Acer</td><td>F12</td><td>F2</td></tr>
-            <tr><td>MSI</td><td>F11</td><td>Del</td></tr>
-            <tr><td>Gigabyte</td><td>F12</td><td>Del</td></tr>
+            <tr><td>HP</td><td>F9</td><td>F10</td></tr>
+            <tr><td>Lenovo</td><td>F12</td><td>F1 ou F2</td></tr>
+            <tr><td>Acer</td><td>F12</td><td>F2 ou DEL</td></tr>
+            <tr><td>MSI</td><td>F11</td><td>DEL</td></tr>
+            <tr><td>Gigabyte</td><td>F12</td><td>DEL</td></tr>
           </tbody>
         </table>
 
-        <AlertBox type="warning" title="Secure Boot">
-          O Fedora funciona com <strong>Secure Boot habilitado</strong> — não é necessário desabilitar. Se tiver problemas, verifique se o pendrive foi criado corretamente.
-        </AlertBox>
+        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 5: Instalação (Anaconda)</h2>
+        <p>
+          O instalador do Fedora se chama <strong>Anaconda</strong>. Após iniciar pelo pen drive, você verá a opção de testar o Fedora em modo Live ou instalar diretamente.
+        </p>
+        <p>
+          Recomendação: <strong>teste primeiro no modo Live</strong> para verificar se o hardware funciona corretamente (Wi-Fi, som, vídeo, touchpad).
+        </p>
 
-        <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> Processo de Instalação (Anaconda)</h2>
-        <p>O instalador do Fedora se chama <strong>Anaconda</strong>. Ele é gráfico e intuitivo:</p>
-
-        <h3>Passo 1 — Boot pelo pendrive</h3>
-        <ol>
-          <li>Ligue o computador e pressione a tecla de boot menu (veja tabela acima)</li>
-          <li>Selecione o pendrive USB na lista de dispositivos</li>
-          <li>Na tela do GRUB, selecione <strong>"Start Fedora Workstation Live"</strong></li>
-          <li>Aguarde o carregamento do ambiente live</li>
-        </ol>
-
-        <AlertBox type="info" title="Ambiente Live">
-          O ambiente live permite testar o Fedora sem instalar nada. Você pode navegar na internet, testar a compatibilidade de hardware (Wi-Fi, som, vídeo) e decidir se quer instalar. Tudo roda na memória RAM.
-        </AlertBox>
-
-        <h3>Passo 2 — Iniciar a instalação</h3>
-        <ol>
-          <li>No ambiente live, clique em <strong>"Install to Hard Drive"</strong> (ou "Instalar no Disco Rígido")</li>
-          <li>Selecione o <strong>idioma</strong>: Português (Brasil)</li>
-        </ol>
-
-        <h3>Passo 3 — Configurações essenciais</h3>
-        <p>Na tela principal do Anaconda, configure:</p>
+        <h3>Configurações do Anaconda</h3>
         <ul>
-          <li><strong>Teclado</strong> — Português (Brasil) com layout ABNT2</li>
-          <li><strong>Fuso horário</strong> — America/Sao_Paulo (ou sua região)</li>
-          <li><strong>Destino da instalação</strong> — o disco onde o Fedora será instalado (veja particionamento abaixo)</li>
+          <li><strong>Idioma</strong> — Selecione "Português (Brasil)"</li>
+          <li><strong>Teclado</strong> — Adicione "Português (Brasil)" e remova "English (US)" se não precisar</li>
+          <li><strong>Fuso horário</strong> — Selecione sua cidade (ex: América/São Paulo)</li>
+          <li><strong>Destino da instalação</strong> — Escolha o disco e o esquema de particionamento</li>
+          <li><strong>Rede</strong> — Conecte ao Wi-Fi para receber atualizações durante a instalação</li>
         </ul>
 
-        <h3>Passo 4 — Instalar e reiniciar</h3>
-        <ol>
-          <li>Clique em <strong>"Iniciar Instalação"</strong></li>
-          <li>Aguarde a cópia dos arquivos (5-15 minutos dependendo do hardware)</li>
-          <li>Quando terminar, clique em <strong>"Reiniciar"</strong></li>
-          <li>Remova o pendrive USB durante a reinicialização</li>
-          <li>No primeiro boot, configure seu nome de usuário e senha</li>
-        </ol>
-
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Particionamento</h2>
-
-        <h3>Automático (recomendado para iniciantes)</h3>
-        <p>O Anaconda oferece particionamento automático que funciona muito bem para a maioria dos casos. Ele cria:</p>
-        <ul>
-          <li>Partição EFI para boot UEFI</li>
-          <li>Partição /boot para o bootloader</li>
-          <li>Volume Btrfs com subvolumes <code>@</code> (raiz) e <code>@home</code> (dados do usuário)</li>
-        </ul>
-
-        <h3>Manual (para usuários avançados)</h3>
-        <p>Se precisar de controle total, use o particionamento manual. Esquema recomendado:</p>
+        <h3>Opções de Particionamento</h3>
         <table>
-          <thead>
-            <tr><th>Partição</th><th>Tamanho</th><th>Tipo</th><th>Ponto de Montagem</th><th>Observação</th></tr>
-          </thead>
+          <thead><tr><th>Opção</th><th>Quando Usar</th><th>Descrição</th></tr></thead>
           <tbody>
-            <tr><td>EFI</td><td>600 MB</td><td>FAT32</td><td>/boot/efi</td><td>Obrigatório para UEFI</td></tr>
-            <tr><td>Boot</td><td>1 GB</td><td>ext4</td><td>/boot</td><td>Kernel e initramfs</td></tr>
-            <tr><td>Swap</td><td>2-8 GB</td><td>swap</td><td>—</td><td>Igual à RAM para hibernação</td></tr>
-            <tr><td>Root</td><td>Resto do disco</td><td>Btrfs</td><td>/</td><td>Sistema + dados do usuário</td></tr>
+            <tr><td><strong>Automático</strong></td><td>Disco inteiro para Fedora</td><td>O instalador cria as partições automaticamente (EFI, /boot, Btrfs)</td></tr>
+            <tr><td><strong>Personalizado</strong></td><td>Dual boot ou controle manual</td><td>Você define tamanho e ponto de montagem de cada partição</td></tr>
+            <tr><td><strong>Blivet-GUI</strong></td><td>Particionamento avançado</td><td>Interface gráfica completa para manipular partições</td></tr>
           </tbody>
         </table>
 
-        <AlertBox type="info" title="Swap — preciso?">
-          O Fedora usa <strong>zram</strong> por padrão (compressão de RAM), o que reduz a necessidade de swap em disco. Se você tem 8 GB+ de RAM e não precisa de hibernação, pode pular a partição swap. Para hibernação, crie swap igual ao tamanho da RAM.
-        </AlertBox>
-
-        <h3>Dual Boot com Windows</h3>
-        <p>Para instalar o Fedora ao lado do Windows:</p>
-        <ol>
-          <li><strong>No Windows</strong>: abra o Gerenciador de Disco e reduza a partição do Windows para liberar espaço (mínimo 40 GB)</li>
-          <li><strong>Desabilite o Fast Startup</strong>: Painel de Controle → Opções de Energia → "Escolher a função dos botões de energia" → desmarque "Ligar inicialização rápida"</li>
-          <li><strong>No Anaconda</strong>: selecione "I want to configure partitioning" e use o espaço livre para criar as partições do Fedora</li>
-          <li>O GRUB detectará o Windows automaticamente e mostrará ambos no menu de boot</li>
-        </ol>
-
-        <AlertBox type="warning" title="Backup antes do dual boot!">
-          Sempre faça backup dos seus dados antes de particionar o disco. Erros no particionamento podem apagar dados do Windows. Use o espaço <strong>livre/não alocado</strong> — nunca redimensione partições do Windows pelo Anaconda.
-        </AlertBox>
-
-        <h2><CheckCircle className="inline-block mr-2 mb-1 w-5 h-5" /> Pós-instalação Essencial</h2>
-        <p>Após o primeiro boot, execute estas configurações essenciais:</p>
-
-        <h3>1. Atualizar o sistema</h3>
+        <h3>Particionamento Recomendado (Manual)</h3>
         <CodeBlock
-          code={`# Atualizar todos os pacotes (sempre faça isso primeiro!)
+          code={`# Esquema de partições recomendado para UEFI:
+
+  # 1. Partição EFI (obrigatória em UEFI)
+  #    Ponto de montagem: /boot/efi
+  #    Tamanho: 512 MB (formato: FAT32)
+
+  # 2. Partição /boot
+  #    Ponto de montagem: /boot
+  #    Tamanho: 1 GB (formato: ext4)
+
+  # 3. Partição raiz / (principal)
+  #    Ponto de montagem: /
+  #    Tamanho: restante do disco (formato: Btrfs)
+  #    Inclui subvolumes: @home, @root, @var
+
+  # 4. Swap (opcional, recomendado)
+  #    Tamanho sugerido:
+  #    - 4 GB RAM → 4 GB swap
+  #    - 8 GB RAM → 4 GB swap
+  #    - 16+ GB RAM → 2-4 GB swap (ou usar zram)
+  #    O Fedora usa zram por padrão, então swap em disco é opcional`}
+          language="bash"
+          title="esquema de partições"
+        />
+
+        <h2>Dual Boot: Fedora + Windows</h2>
+        <p>
+          Se você quer manter o Windows instalado junto com o Fedora, siga estas instruções:
+        </p>
+        <ul>
+          <li><strong>Antes de tudo:</strong> Faça backup dos seus dados no Windows!</li>
+          <li><strong>No Windows:</strong> Desative a Inicialização Rápida (Fast Startup) em Opções de Energia</li>
+          <li><strong>No Windows:</strong> Reduza a partição Windows usando o Gerenciador de Disco para liberar espaço (mínimo 40 GB)</li>
+          <li><strong>Na BIOS:</strong> Desative o Fast Boot (diferente de Fast Startup)</li>
+          <li><strong>Na instalação:</strong> Use particionamento personalizado e instale o Fedora no espaço livre</li>
+          <li><strong>Importante:</strong> NÃO formate a partição EFI existente — o Fedora a compartilha com o Windows</li>
+        </ul>
+
+        <AlertBox type="warning" title="Ordem de instalação">
+          Se possível, instale o Windows primeiro e o Fedora depois. O GRUB do Fedora detecta o Windows automaticamente. Se instalar o Windows depois, ele pode sobrescrever o GRUB — nesse caso, use um Live USB do Fedora para reinstalar o GRUB.
+        </AlertBox>
+
+        <h2><CheckCircle className="inline-block mr-2 mb-1 w-5 h-5" /> Passo 6: Pós-instalação</h2>
+        <p>
+          Após a instalação, reinicie, remova o pen drive e faça o primeiro login. O assistente inicial do GNOME vai guiá-lo pelas configurações básicas. Em seguida:
+        </p>
+        <CodeBlock
+          code={`# 1. Atualizar todo o sistema
   sudo dnf update -y
 
-  # Reiniciar se o kernel foi atualizado
-  # (verifique se a saída menciona "kernel")
-  sudo reboot`}
-          language="bash"
-          title="atualização inicial"
-        />
-
-        <h3>2. Habilitar RPM Fusion</h3>
-        <CodeBlock
-          code={`# Repositório free (codecs, ferramentas open source não incluídas)
+  # 2. Instalar repositórios RPM Fusion (para codecs e drivers)
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-
-  # Repositório nonfree (drivers NVIDIA, Steam, etc.)
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-  # Verificar que foram adicionados
-  dnf repolist | grep rpmfusion`}
-          language="bash"
-          title="rpm fusion"
-        />
+  # 3. Instalar codecs multimídia
+  sudo dnf install gstreamer1-plugins-bad-\* gstreamer1-plugins-good-\* gstreamer1-plugins-ugly-\* gstreamer1-plugin-openh264
+  sudo dnf install ffmpeg ffmpeg-libs
 
-        <h3>3. Instalar codecs multimídia</h3>
-        <CodeBlock
-          code={`# Codecs completos (áudio e vídeo)
-  sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+  # 4. Instalar ferramentas essenciais
+  sudo dnf install vim git curl wget htop neofetch unzip p7zip
 
-  # Codecs adicionais do RPM Fusion
-  sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-
-  # Suporte a fontes Microsoft (Arial, Times, etc.)
-  sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
-  sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm`}
-          language="bash"
-          title="codecs e fontes"
-        />
-
-        <h3>4. Habilitar Flathub</h3>
-        <CodeBlock
-          code={`# Adicionar repositório Flathub para apps Flatpak
+  # 5. Configurar Flatpak (já vem habilitado, mas adicione Flathub)
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-  # Agora você pode instalar apps como:
-  # flatpak install flathub com.spotify.Client
-  # flatpak install flathub com.discordapp.Discord`}
+  # 6. Reiniciar para aplicar tudo
+  sudo reboot`}
           language="bash"
-          title="flathub"
+          title="pós-instalação"
         />
 
-        <h3>5. Instalar drivers NVIDIA (se aplicável)</h3>
-        <CodeBlock
-          code={`# Verificar se você tem placa NVIDIA
-  lspci | grep -i nvidia
-
-  # Se sim, instalar drivers proprietários (requer RPM Fusion nonfree)
-  sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
-
-  # Aguardar a compilação do módulo (pode levar alguns minutos)
-  # Depois, reinicie:
-  sudo reboot
-
-  # Verificar se o driver está ativo
-  nvidia-smi`}
-          language="bash"
-          title="driver nvidia"
-        />
-
-        <AlertBox type="info" title="Placa AMD ou Intel?">
-          Drivers de vídeo AMD (amdgpu) e Intel (i915) já vêm incluídos no kernel do Fedora. Não é necessário instalar nada adicional — funciona out of the box.
-        </AlertBox>
-
-        <h3>6. Otimizar o DNF</h3>
-        <CodeBlock
-          code={`# Acelerar downloads do DNF
-  echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
-  echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
-
-  # Verificar configuração
-  cat /etc/dnf/dnf.conf`}
-          language="bash"
-          title="otimizar dnf"
-        />
-
-        <h2><Settings className="inline-block mr-2 mb-1 w-5 h-5" /> Checklist Pós-Instalação</h2>
-        <table>
-          <thead><tr><th>Tarefa</th><th>Comando</th><th>Prioridade</th></tr></thead>
-          <tbody>
-            <tr><td>Atualizar sistema</td><td><code>sudo dnf update -y</code></td><td>Essencial</td></tr>
-            <tr><td>RPM Fusion</td><td>Ver acima</td><td>Essencial</td></tr>
-            <tr><td>Codecs multimídia</td><td><code>sudo dnf install @multimedia</code></td><td>Essencial</td></tr>
-            <tr><td>Flathub</td><td><code>flatpak remote-add</code></td><td>Recomendado</td></tr>
-            <tr><td>Driver NVIDIA</td><td><code>sudo dnf install akmod-nvidia</code></td><td>Se aplicável</td></tr>
-            <tr><td>Otimizar DNF</td><td><code>max_parallel_downloads=10</code></td><td>Recomendado</td></tr>
-            <tr><td>Fontes Microsoft</td><td>Ver acima</td><td>Opcional</td></tr>
-            <tr><td>Ferramentas dev</td><td><code>sudo dnf install @development-tools</code></td><td>Para desenvolvedores</td></tr>
-          </tbody>
-        </table>
-
-        <h2>Troubleshooting da Instalação</h2>
+        <h2><AlertTriangle className="inline-block mr-2 mb-1 w-5 h-5" /> Troubleshooting de Instalação</h2>
         <table>
           <thead><tr><th>Problema</th><th>Causa Provável</th><th>Solução</th></tr></thead>
           <tbody>
-            <tr><td>Pendrive não aparece no boot</td><td>Secure Boot ou pendrive mal criado</td><td>Recrie com Fedora Media Writer; verifique a ordem de boot no BIOS</td></tr>
-            <tr><td>Tela preta após boot</td><td>Driver de vídeo incompatível</td><td>No GRUB, edite a entrada e adicione <code>nomodeset</code> ao kernel</td></tr>
-            <tr><td>Wi-Fi não funciona no live</td><td>Driver proprietário necessário</td><td>Use cabo ethernet para instalar; depois instale o driver via DNF</td></tr>
-            <tr><td>Erro de particionamento</td><td>Tabela de partição incompatível</td><td>Use o particionamento manual; converta MBR para GPT se necessário</td></tr>
-            <tr><td>Boot loop após instalar</td><td>GRUB não foi instalado corretamente</td><td>Reinstale o GRUB pelo ambiente live com <code>chroot</code></td></tr>
-            <tr><td>Windows sumiu do boot</td><td>GRUB não detectou</td><td>Execute <code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code></td></tr>
+            <tr><td>Pen drive não aparece no boot</td><td>Secure Boot ou ordem de boot</td><td>Acesse a BIOS e configure USB como primeiro boot</td></tr>
+            <tr><td>Tela preta após iniciar a ISO</td><td>Driver de vídeo NVIDIA</td><td>No GRUB, edite o boot e adicione <code>nomodeset</code></td></tr>
+            <tr><td>Wi-Fi não funciona no Live</td><td>Driver proprietário necessário</td><td>Use cabo Ethernet ou instale o driver após a instalação</td></tr>
+            <tr><td>Instalador travou</td><td>ISO corrompida ou hardware</td><td>Verifique o checksum da ISO e teste a RAM com memtest86+</td></tr>
+            <tr><td>Erro de particionamento</td><td>Tabela de partição incompatível</td><td>Use o Blivet-GUI ou particione manualmente com GParted no Live</td></tr>
+            <tr><td>GRUB não aparece (dual boot)</td><td>Windows sobrescreveu o bootloader</td><td>Boot pelo Live USB e reinstale o GRUB com <code>grub2-install</code></td></tr>
+            <tr><td>Tela com resolução errada</td><td>Driver de vídeo genérico</td><td>Instale drivers proprietários após a instalação via RPM Fusion</td></tr>
+            <tr><td>Touchpad não funciona</td><td>Driver não carregado</td><td>Atualize o kernel: <code>sudo dnf update kernel</code></td></tr>
           </tbody>
         </table>
+
+        <AlertBox type="success" title="Instalação concluída!">
+          Parabéns! Com o Fedora instalado, siga para a página de <strong>Primeiros Passos</strong> para configurar completamente seu sistema e instalar os programas essenciais.
+        </AlertBox>
       </PageContainer>
     );
   }
