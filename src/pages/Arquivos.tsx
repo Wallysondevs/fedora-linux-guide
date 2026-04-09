@@ -280,7 +280,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
         <table>
           <thead><tr><th>Dispositivo</th><th>Função</th><th>Uso Comum</th></tr></thead>
           <tbody>
-            <tr><td><code>/dev/null</code></td><td>Descarta tudo que recebe</td><td>Silenciar saída: <code>cmd &gt; /dev/null</code></td></tr>
+            <tr><td><code>/dev/null</code></td><td>Descarta tudo que recebe</td><td>Silenciar saída: <code>cmd > /dev/null</code></td></tr>
             <tr><td><code>/dev/zero</code></td><td>Produz zeros infinitos</td><td>Zerar disco: <code>dd if=/dev/zero</code></td></tr>
             <tr><td><code>/dev/urandom</code></td><td>Números pseudo-aleatórios</td><td>Gerar senha: <code>head -c 32 /dev/urandom | base64</code></td></tr>
             <tr><td><code>/dev/sda</code></td><td>Primeiro disco SATA/SCSI</td><td>Particionamento</td></tr>

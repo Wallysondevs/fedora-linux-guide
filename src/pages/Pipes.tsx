@@ -339,8 +339,8 @@ import { PageContainer } from "@/components/layout/PageContainer";
   ps aux --sort=-%mem | head -10 | awk '{printf "%-8s %5s%% %s\n", $1, $4, $11}'
 
   # === RENOMEAR ARQUIVOS EM LOTE ===
-  # Trocar extensão .jpeg para .jpg usando rename
-  rename .jpeg .jpg *.jpeg
+  # Trocar extensão .jpeg para .jpg
+  for f in *.jpeg; do mv "$f" "${f%.jpeg}.jpg"; done
 
   # === CONTAR PALAVRAS ÚNICAS EM ARQUIVO ===
   cat texto.txt | tr ' ' '\n' | sort | uniq -c | sort -rn | head -20
