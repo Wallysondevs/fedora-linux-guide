@@ -340,7 +340,8 @@ import { PageContainer } from "@/components/layout/PageContainer";
 
   # === RENOMEAR ARQUIVOS EM LOTE ===
   # Trocar extensão .jpeg para .jpg
-  for f in *.jpeg; do mv "$f" "${f%.jpeg}.jpg"; done
+  # Renomear .jpeg para .jpg usando rename:
+rename .jpeg .jpg *.jpeg
 
   # === CONTAR PALAVRAS ÚNICAS EM ARQUIVO ===
   cat texto.txt | tr ' ' '\n' | sort | uniq -c | sort -rn | head -20

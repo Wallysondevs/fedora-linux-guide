@@ -125,11 +125,11 @@ import { PageContainer } from "@/components/layout/PageContainer";
   # |- Filter
   # |  |- Currently failed: 2
   # |  |- Total failed: 47
-  # |  `- File list: /var/log/secure
-  # `- Actions
+  # |  -- File list: /var/log/secure
+  # -- Actions
   #    |- Currently banned: 3
   #    |- Total banned: 15
-  #    `- Banned IP list: 45.33.xx.xx 103.xx.xx.xx 185.xx.xx.xx
+  # -- Banned IP list: 45.33.xx.xx 103.xx.xx.xx 185.xx.xx.xx
 
   # Ver IPs banidos
   sudo fail2ban-client get sshd banip
