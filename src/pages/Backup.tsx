@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Por que Fazer Backup?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"rsync"}</strong> {' — '} {"sincroniza preservando atributos."}
+            </li>
+          <li>
+              <strong>{"tar"}</strong> {' — '} {"arquiva e comprime: tar czf bk.tgz pasta/."}
+            </li>
+          <li>
+              <strong>{"Borg/Restic"}</strong> {' — '} {"backups deduplicados com criptografia."}
+            </li>
+          <li>
+              <strong>{"Timeshift"}</strong> {' — '} {"snapshots do sistema (Btrfs/rsync)."}
+            </li>
+          <li>
+              <strong>{"3-2-1"}</strong> {' — '} {"3 cópias, 2 mídias, 1 fora do site."}
+            </li>
+          </ul>
+          <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Por que Fazer Backup?</h2>
         <p>
           Backups são a única proteção real contra perda de dados. Não importa quão cuidadoso você seja —
           hardware falha, erros acontecem, e ransomware existe. A regra de ouro é a <strong>regra 3-2-1</strong>:

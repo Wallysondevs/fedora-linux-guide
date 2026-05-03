@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><FileText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é journalctl?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"journalctl"}</strong> {' — '} {"consulta journal do systemd."}
+            </li>
+          <li>
+              <strong>{"-u service"}</strong> {' — '} {"filtra por unit."}
+            </li>
+          <li>
+              <strong>{"-f"}</strong> {' — '} {"segue logs em tempo real."}
+            </li>
+          <li>
+              <strong>{"--since"}</strong> {' — '} {"filtra por data."}
+            </li>
+          <li>
+              <strong>{"Persistente"}</strong> {' — '} {"/etc/systemd/journald.conf Storage=persistent."}
+            </li>
+          </ul>
+          <h2><FileText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é journalctl?</h2>
         <p>
           O <strong>journalctl</strong> é o comando para consultar logs do <strong>systemd journal</strong>,
           o sistema de logging unificado do Fedora. Todos os logs — boot, kernel, serviços, aplicações —

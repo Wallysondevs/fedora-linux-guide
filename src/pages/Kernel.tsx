@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="25 min"
       >
-        <h2><Cpu className="inline-block mr-2 mb-1 w-5 h-5" /> O Kernel no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Kernel"}</strong> {' — '} {"núcleo do Linux."}
+            </li>
+          <li>
+              <strong>{"uname -r"}</strong> {' — '} {"versão atual."}
+            </li>
+          <li>
+              <strong>{"/lib/modules/"}</strong> {' — '} {"módulos."}
+            </li>
+          <li>
+              <strong>{"modprobe"}</strong> {' — '} {"carrega/descarrega módulos."}
+            </li>
+          <li>
+              <strong>{"DKMS"}</strong> {' — '} {"recompila módulos out-of-tree em updates."}
+            </li>
+          </ul>
+          <h2><Cpu className="inline-block mr-2 mb-1 w-5 h-5" /> O Kernel no Fedora</h2>
         <p>
           O <strong>kernel</strong> é o coração do Linux — ele gerencia hardware, memória, processos e
           comunicação entre software e hardware. O Fedora é conhecido por usar kernels muito recentes,

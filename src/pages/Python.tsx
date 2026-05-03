@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Python no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"python3"}</strong> {' — '} {"padrão no Fedora."}
+            </li>
+          <li>
+              <strong>{"pip"}</strong> {' — '} {"gerenciador de pacotes Python."}
+            </li>
+          <li>
+              <strong>{"venv"}</strong> {' — '} {"ambiente virtual isolado."}
+            </li>
+          <li>
+              <strong>{"poetry/pipenv"}</strong> {' — '} {"alternativas modernas."}
+            </li>
+          <li>
+              <strong>{"Module"}</strong> {' — '} {"dnf module list python."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Python no Fedora</h2>
         <p>
           O Fedora é uma das melhores distros para desenvolvimento Python. Ele vem com Python 3
           pré-instalado (o sistema usa Python internamente), com versões sempre atualizadas.

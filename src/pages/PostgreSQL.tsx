@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Database className="inline-block mr-2 mb-1 w-5 h-5" /> O que é PostgreSQL?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"postgresql"}</strong> {' — '} {"RDBMS robusto."}
+            </li>
+          <li>
+              <strong>{"initdb"}</strong> {' — '} {"inicializa cluster (postgresql-setup --initdb)."}
+            </li>
+          <li>
+              <strong>{"psql"}</strong> {' — '} {"cliente CLI."}
+            </li>
+          <li>
+              <strong>{"systemctl"}</strong> {' — '} {"start/enable postgresql."}
+            </li>
+          <li>
+              <strong>{"pg_hba.conf"}</strong> {' — '} {"controle de autenticação."}
+            </li>
+          </ul>
+          <h2><Database className="inline-block mr-2 mb-1 w-5 h-5" /> O que é PostgreSQL?</h2>
         <p>
           O <strong>PostgreSQL</strong> (ou "Postgres") é o banco de dados relacional open source mais avançado
           do mundo. Usado por empresas como Instagram, Spotify e Netflix, ele suporta JSON nativo,

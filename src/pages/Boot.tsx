@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="20 min"
       >
-        <h2><Power className="inline-block mr-2 mb-1 w-5 h-5" /> Processo de Boot</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"GRUB2"}</strong> {' — '} {"bootloader padrão."}
+            </li>
+          <li>
+              <strong>{"/boot/efi"}</strong> {' — '} {"partição EFI System Partition (ESP)."}
+            </li>
+          <li>
+              <strong>{"systemd-boot"}</strong> {' — '} {"alternativa minimalista."}
+            </li>
+          <li>
+              <strong>{"Kernel parameters"}</strong> {' — '} {"editáveis em /etc/default/grub."}
+            </li>
+          <li>
+              <strong>{"Plymouth"}</strong> {' — '} {"splash screen durante o boot."}
+            </li>
+          </ul>
+          <h2><Power className="inline-block mr-2 mb-1 w-5 h-5" /> Processo de Boot</h2>
         <p>
           Quando você liga o computador com Fedora, acontece esta sequência:
         </p>

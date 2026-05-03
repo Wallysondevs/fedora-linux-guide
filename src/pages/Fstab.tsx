@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="20 min"
       >
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é fstab?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"/etc/fstab"}</strong> {' — '} {"define montagens permanentes."}
+            </li>
+          <li>
+              <strong>{"UUID"}</strong> {' — '} {"identificador estável (use blkid)."}
+            </li>
+          <li>
+              <strong>{"Options"}</strong> {' — '} {"defaults, noatime, ro, ssd, etc."}
+            </li>
+          <li>
+              <strong>{"mount -a"}</strong> {' — '} {"remonta tudo do fstab."}
+            </li>
+          <li>
+              <strong>{"systemd.mount"}</strong> {' — '} {"units geradas a partir do fstab."}
+            </li>
+          </ul>
+          <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é fstab?</h2>
         <p>
           O arquivo <code>/etc/fstab</code> (File System Table) define quais partições/discos são
           montados automaticamente durante o boot. Cada linha especifica um dispositivo, ponto de

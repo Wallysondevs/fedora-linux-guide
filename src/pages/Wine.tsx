@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><Wine className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Wine?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Wine"}</strong> {' — '} {"executa apps Windows no Linux."}
+            </li>
+          <li>
+              <strong>{"Winetricks"}</strong> {' — '} {"instala dependências comuns."}
+            </li>
+          <li>
+              <strong>{"Bottles"}</strong> {' — '} {"front-end moderno."}
+            </li>
+          <li>
+              <strong>{"Proton"}</strong> {' — '} {"derivado do Wine para Steam."}
+            </li>
+          <li>
+              <strong>{"DXVK"}</strong> {' — '} {"traduz DirectX 9-11 para Vulkan."}
+            </li>
+          </ul>
+          <h2><Wine className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Wine?</h2>
         <p>
           O <strong>Wine</strong> (Wine Is Not an Emulator) é uma camada de compatibilidade que permite
           executar aplicativos Windows no Linux. Ele traduz chamadas da API do Windows para chamadas

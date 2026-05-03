@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="40 min"
       >
-        <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> firewalld — Firewall do Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"firewalld"}</strong> {' — '} {"gerenciador padrão do Fedora."}
+            </li>
+          <li>
+              <strong>{"Zonas"}</strong> {' — '} {"public/home/work/internal — perfis de regras."}
+            </li>
+          <li>
+              <strong>{"Services"}</strong> {' — '} {"presets para ssh, http, etc."}
+            </li>
+          <li>
+              <strong>{"firewall-cmd"}</strong> {' — '} {"CLI principal."}
+            </li>
+          <li>
+              <strong>{"--permanent"}</strong> {' — '} {"sem isso a regra é só na sessão."}
+            </li>
+          </ul>
+          <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> firewalld — Firewall do Fedora</h2>
         <p>
           O <strong>firewalld</strong> é o firewall padrão do Fedora. Ele gerencia regras de filtragem de pacotes usando o conceito de <strong>zonas</strong> — cada zona define um nível de confiança para uma conexão de rede.
         </p>

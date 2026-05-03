@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="35 min"
       >
-        <h2><FolderOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Estrutura de Diretórios (FHS)</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"ls/cp/mv/rm"}</strong> {' — '} {"listar/copiar/mover/remover."}
+            </li>
+          <li>
+              <strong>{"stat"}</strong> {' — '} {"metadados detalhados (inode, owner, perms, mtime)."}
+            </li>
+          <li>
+              <strong>{"file"}</strong> {' — '} {"identifica tipo do arquivo pelo conteúdo."}
+            </li>
+          <li>
+              <strong>{"touch"}</strong> {' — '} {"cria arquivo vazio ou atualiza mtime."}
+            </li>
+          <li>
+              <strong>{"ln -s"}</strong> {' — '} {"cria link simbólico."}
+            </li>
+          </ul>
+          <h2><FolderOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Estrutura de Diretórios (FHS)</h2>
         <p>
           O Linux segue o <strong>FHS (Filesystem Hierarchy Standard)</strong> — uma estrutura padronizada de diretórios. Entender essa estrutura é fundamental para administrar o sistema.
         </p>

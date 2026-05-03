@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="25 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> O que é VS Code?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"VSCode"}</strong> {' — '} {"editor da Microsoft, popular."}
+            </li>
+          <li>
+              <strong>{"Code-OSS"}</strong> {' — '} {"versão sem branding/telemetria."}
+            </li>
+          <li>
+              <strong>{"Flatpak"}</strong> {' — '} {"distribuído via Flathub."}
+            </li>
+          <li>
+              <strong>{"Extensions"}</strong> {' — '} {"marketplace com milhares."}
+            </li>
+          <li>
+              <strong>{"Remote SSH"}</strong> {' — '} {"edita arquivos em servidor remoto."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> O que é VS Code?</h2>
         <p>
           O <strong>Visual Studio Code</strong> (VS Code) é o editor de código mais popular do mundo. Desenvolvido
           pela Microsoft, é open source, gratuito e disponível para Linux. Oferece IntelliSense (auto-completar

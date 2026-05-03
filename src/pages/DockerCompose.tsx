@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Box className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Podman Compose?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"docker-compose"}</strong> {' — '} {"orquestra múltiplos containers via YAML."}
+            </li>
+          <li>
+              <strong>{"podman-compose"}</strong> {' — '} {"equivalente para Podman."}
+            </li>
+          <li>
+              <strong>{"Services"}</strong> {' — '} {"definição de containers em compose."}
+            </li>
+          <li>
+              <strong>{"Networks"}</strong> {' — '} {"redes virtuais entre containers."}
+            </li>
+          <li>
+              <strong>{"Volumes"}</strong> {' — '} {"persistência de dados."}
+            </li>
+          </ul>
+          <h2><Box className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Podman Compose?</h2>
         <p>
           O <strong>Podman Compose</strong> é a alternativa do Fedora ao Docker Compose. Ele permite definir e
           gerenciar aplicações com múltiplos containers usando um arquivo <code>docker-compose.yml</code>

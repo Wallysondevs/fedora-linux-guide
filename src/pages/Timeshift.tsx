@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="20 min"
       >
-        <h2><Clock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Timeshift?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Timeshift"}</strong> {' — '} {"snapshots tipo \"System Restore\"."}
+            </li>
+          <li>
+              <strong>{"Btrfs mode"}</strong> {' — '} {"aproveita snapshots nativos."}
+            </li>
+          <li>
+              <strong>{"rsync mode"}</strong> {' — '} {"para outros filesystems."}
+            </li>
+          <li>
+              <strong>{"Schedule"}</strong> {' — '} {"automatize daily/weekly."}
+            </li>
+          <li>
+              <strong>{"Restore"}</strong> {' — '} {"recupera sistema do snapshot."}
+            </li>
+          </ul>
+          <h2><Clock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Timeshift?</h2>
         <p>
           O <strong>Timeshift</strong> cria "pontos de restauração" do sistema, similares ao Restauração
           do Sistema do Windows. Se uma atualização quebrar algo, você pode voltar ao estado anterior

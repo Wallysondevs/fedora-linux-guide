@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> O que é VPN?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"WireGuard"}</strong> {' — '} {"VPN moderna e simples."}
+            </li>
+          <li>
+              <strong>{"OpenVPN"}</strong> {' — '} {"tradicional, muito flexível."}
+            </li>
+          <li>
+              <strong>{"NetworkManager"}</strong> {' — '} {"suporta ambas via GUI."}
+            </li>
+          <li>
+              <strong>{"Tailscale"}</strong> {' — '} {"overlay zero-config baseada em WireGuard."}
+            </li>
+          <li>
+              <strong>{"firewalld"}</strong> {' — '} {"add interface to trusted zone."}
+            </li>
+          </ul>
+          <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> O que é VPN?</h2>
         <p>
           Uma <strong>VPN</strong> (Virtual Private Network) cria um túnel criptografado entre seu computador
           e um servidor remoto, protegendo seu tráfego de internet. Útil para privacidade, acesso remoto

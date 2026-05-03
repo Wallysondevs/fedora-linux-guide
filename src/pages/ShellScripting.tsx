@@ -11,7 +11,28 @@ export default function ShellScripting() {
       difficulty="intermediario"
       timeToRead="45 min"
     >
-      <h2><ScrollText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Shell Scripting?</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"#!/bin/bash"}</strong> {' — '} {"shebang."}
+          </li>
+        <li>
+            <strong>{"Variáveis"}</strong> {' — '} {"VAR=valor; sem espaços."}
+          </li>
+        <li>
+            <strong>{"if/for/while"}</strong> {' — '} {"controle de fluxo."}
+          </li>
+        <li>
+            <strong>{"Functions"}</strong> {' — '} {"blocos reutilizáveis."}
+          </li>
+        <li>
+            <strong>{"set -e"}</strong> {' — '} {"aborta no primeiro erro."}
+          </li>
+        </ul>
+        <h2><ScrollText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Shell Scripting?</h2>
       <p>
         Scripts shell são arquivos de texto com sequências de comandos executados pelo Bash. Em vez de digitar os mesmos comandos sempre, você escreve uma vez e executa quantas vezes quiser. Isso é a base da automação no Linux.
       </p>

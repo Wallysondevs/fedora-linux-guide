@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><Users className="inline-block mr-2 mb-1 w-5 h-5" /> Como Funciona</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"useradd/userdel"}</strong> {' — '} {"adiciona/remove."}
+            </li>
+          <li>
+              <strong>{"passwd"}</strong> {' — '} {"muda senha."}
+            </li>
+          <li>
+              <strong>{"groups"}</strong> {' — '} {"grupos do usuário."}
+            </li>
+          <li>
+              <strong>{"/etc/passwd"}</strong> {' — '} {"base de dados de usuários."}
+            </li>
+          <li>
+              <strong>{"sudo"}</strong> {' — '} {"privilégios via /etc/sudoers."}
+            </li>
+          </ul>
+          <h2><Users className="inline-block mr-2 mb-1 w-5 h-5" /> Como Funciona</h2>
         <p>
           No Linux, cada pessoa que usa o sistema tem uma <strong>conta de usuário</strong>. Cada usuário tem um <strong>UID</strong> (User ID) numérico, um diretório home e pertence a um ou mais <strong>grupos</strong>. Os grupos facilitam o controle de permissões — em vez de dar acesso a cada usuário individualmente, você adiciona usuários a grupos.
         </p>

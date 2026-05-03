@@ -11,7 +11,28 @@ export default function SSH() {
       difficulty="intermediario"
       timeToRead="45 min"
     >
-      <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é SSH?</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"ssh"}</strong> {' — '} {"login seguro remoto."}
+          </li>
+        <li>
+            <strong>{"~/.ssh/config"}</strong> {' — '} {"aliases e options por host."}
+          </li>
+        <li>
+            <strong>{"Keys"}</strong> {' — '} {"ssh-keygen, ssh-copy-id."}
+          </li>
+        <li>
+            <strong>{"sshd_config"}</strong> {' — '} {"config do servidor."}
+          </li>
+        <li>
+            <strong>{"ProxyJump"}</strong> {' — '} {"salta por bastion."}
+          </li>
+        </ul>
+        <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é SSH?</h2>
       <p>
         O <strong>SSH (Secure Shell)</strong> é o protocolo padrão para acesso remoto seguro a sistemas Linux. Toda comunicação é criptografada, tornando-o seguro mesmo em redes públicas. No Fedora, o pacote utilizado é o <strong>openssh</strong>, que fornece tanto o cliente (<code>ssh</code>) quanto o servidor (<code>sshd</code>).
       </p>

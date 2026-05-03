@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> Como Funcionam as Permissões</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"chmod"}</strong> {' — '} {"muda permissões."}
+            </li>
+          <li>
+              <strong>{"chown"}</strong> {' — '} {"muda dono."}
+            </li>
+          <li>
+              <strong>{"rwx"}</strong> {' — '} {"read/write/execute."}
+            </li>
+          <li>
+              <strong>{"Numérico"}</strong> {' — '} {"755 = rwxr-xr-x."}
+            </li>
+          <li>
+              <strong>{"ACL"}</strong> {' — '} {"setfacl/getfacl para regras finas."}
+            </li>
+          </ul>
+          <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> Como Funcionam as Permissões</h2>
         <p>
           No Linux, cada arquivo e diretório tem três conjuntos de permissões:
         </p>

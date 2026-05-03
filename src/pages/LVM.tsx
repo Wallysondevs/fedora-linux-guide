@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="25 min"
       >
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é LVM?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"LVM"}</strong> {' — '} {"Logical Volume Management — particionamento flexível."}
+            </li>
+          <li>
+              <strong>{"PV"}</strong> {' — '} {"Physical Volume."}
+            </li>
+          <li>
+              <strong>{"VG"}</strong> {' — '} {"Volume Group."}
+            </li>
+          <li>
+              <strong>{"LV"}</strong> {' — '} {"Logical Volume."}
+            </li>
+          <li>
+              <strong>{"Snapshot"}</strong> {' — '} {"LVM suporta snapshots tradicionais."}
+            </li>
+          </ul>
+          <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é LVM?</h2>
         <p>
           O <strong>LVM</strong> (Logical Volume Manager) é uma camada de abstração entre os discos físicos
           e os sistemas de arquivos. Em vez de criar partições fixas no disco, o LVM permite criar

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="25 min"
       >
-        <h2><Music className="inline-block mr-2 mb-1 w-5 h-5" /> Codecs Multimídia</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"RPM Fusion"}</strong> {' — '} {"repos com codecs proprietários."}
+            </li>
+          <li>
+              <strong>{"ffmpeg"}</strong> {' — '} {"canivete suíço de mídia."}
+            </li>
+          <li>
+              <strong>{"VLC"}</strong> {' — '} {"player universal."}
+            </li>
+          <li>
+              <strong>{"MPV"}</strong> {' — '} {"player leve focado em qualidade."}
+            </li>
+          <li>
+              <strong>{"Codecs"}</strong> {' — '} {"H.264, AAC etc via RPM Fusion."}
+            </li>
+          </ul>
+          <h2><Music className="inline-block mr-2 mb-1 w-5 h-5" /> Codecs Multimídia</h2>
         <p>
           O Fedora não inclui codecs proprietários por padrão (MP3, H.264, AAC, etc.) por questões
           de licenciamento. Mas é fácil instalá-los via <strong>RPM Fusion</strong>.

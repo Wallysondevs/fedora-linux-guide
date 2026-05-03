@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><Network className="inline-block mr-2 mb-1 w-5 h-5" /> NetworkManager</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"NetworkManager"}</strong> {' — '} {"padrão; nmcli é a CLI."}
+            </li>
+          <li>
+              <strong>{"ip"}</strong> {' — '} {"comando moderno (substitui ifconfig)."}
+            </li>
+          <li>
+              <strong>{"ss"}</strong> {' — '} {"substitui netstat."}
+            </li>
+          <li>
+              <strong>{"ping/traceroute"}</strong> {' — '} {"diagnóstico básico."}
+            </li>
+          <li>
+              <strong>{"firewall-cmd"}</strong> {' — '} {"firewall."}
+            </li>
+          </ul>
+          <h2><Network className="inline-block mr-2 mb-1 w-5 h-5" /> NetworkManager</h2>
         <p>
           O Fedora usa o <strong>NetworkManager</strong> para gerenciar todas as conexões de rede. Ele é controlado tanto pela interface gráfica do GNOME quanto pela ferramenta de linha de comando <strong>nmcli</strong> e pela interface interativa <strong>nmtui</strong>.
         </p>

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="15 min"
       >
-        <h2><Globe className="inline-block mr-2 mb-1 w-5 h-5" /> Idioma do Sistema</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"locale"}</strong> {' — '} {"idioma e formatos."}
+            </li>
+          <li>
+              <strong>{"localectl"}</strong> {' — '} {"gerencia locale e keymap."}
+            </li>
+          <li>
+              <strong>{"timedatectl"}</strong> {' — '} {"data, hora, timezone, NTP."}
+            </li>
+          <li>
+              <strong>{"/etc/locale.conf"}</strong> {' — '} {"config do idioma."}
+            </li>
+          <li>
+              <strong>{"LANG=pt_BR.UTF-8"}</strong> {' — '} {"locale do Brasil."}
+            </li>
+          </ul>
+          <h2><Globe className="inline-block mr-2 mb-1 w-5 h-5" /> Idioma do Sistema</h2>
         <CodeBlock
           code={`# Ver idioma atual
   localectl status

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="35 min"
       >
-        <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é o DNF?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"DNF"}</strong> {' — '} {"gerenciador de pacotes do Fedora — sucessor do yum."}
+            </li>
+          <li>
+              <strong>{"Repos"}</strong> {' — '} {"/etc/yum.repos.d/."}
+            </li>
+          <li>
+              <strong>{"groups"}</strong> {' — '} {"metapacotes: dnf groupinstall \"Development Tools\"."}
+            </li>
+          <li>
+              <strong>{"history"}</strong> {' — '} {"desfaz transações."}
+            </li>
+          <li>
+              <strong>{"dnf-automatic"}</strong> {' — '} {"atualizações automáticas."}
+            </li>
+          </ul>
+          <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é o DNF?</h2>
         <p>
           O <strong>DNF</strong> (Dandified YUM) é o gerenciador de pacotes oficial do Fedora. Ele substitui o antigo YUM e oferece melhor desempenho, resolução de dependências mais inteligente e uso de metadados em cache. O DNF5 é a versão mais recente, escrita em C++ para máxima performance.
         </p>

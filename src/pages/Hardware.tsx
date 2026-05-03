@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="20 min"
       >
-        <h2><Cpu className="inline-block mr-2 mb-1 w-5 h-5" /> Informações do Hardware</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"lscpu"}</strong> {' — '} {"info do processador."}
+            </li>
+          <li>
+              <strong>{"lspci/lsusb"}</strong> {' — '} {"dispositivos PCI/USB."}
+            </li>
+          <li>
+              <strong>{"lshw"}</strong> {' — '} {"listagem detalhada."}
+            </li>
+          <li>
+              <strong>{"dmidecode"}</strong> {' — '} {"info da BIOS/SMBIOS."}
+            </li>
+          <li>
+              <strong>{"sensors"}</strong> {' — '} {"temperatura e voltagens."}
+            </li>
+          </ul>
+          <h2><Cpu className="inline-block mr-2 mb-1 w-5 h-5" /> Informações do Hardware</h2>
         <CodeBlock
           code={`# CPU
   lscpu

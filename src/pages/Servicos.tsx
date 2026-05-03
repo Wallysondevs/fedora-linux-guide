@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="40 min"
       >
-        <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Systemd?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"systemd"}</strong> {' — '} {"sistema de init padrão."}
+            </li>
+          <li>
+              <strong>{"systemctl"}</strong> {' — '} {"start/stop/enable/status."}
+            </li>
+          <li>
+              <strong>{"Units"}</strong> {' — '} {"arquivos .service em /etc/systemd/system/."}
+            </li>
+          <li>
+              <strong>{"Targets"}</strong> {' — '} {"equivalente a runlevels."}
+            </li>
+          <li>
+              <strong>{"journalctl"}</strong> {' — '} {"logs unificados."}
+            </li>
+          </ul>
+          <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Systemd?</h2>
         <p>
           O <strong>systemd</strong> é o sistema de inicialização (<em>init system</em>) do Fedora e da grande maioria das distros Linux modernas. Ele é responsável por inicializar o sistema, gerenciar serviços, montar sistemas de arquivos, gerenciar sessões de usuário e muito mais.
         </p>

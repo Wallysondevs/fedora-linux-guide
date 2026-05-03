@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="30 min"
       >
-        <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Apache?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"httpd"}</strong> {' — '} {"daemon do Apache no Fedora/RHEL."}
+            </li>
+          <li>
+              <strong>{"DocumentRoot"}</strong> {' — '} {"/var/www/html — pasta padrão dos sites."}
+            </li>
+          <li>
+              <strong>{"VirtualHost"}</strong> {' — '} {"múltiplos sites no mesmo servidor."}
+            </li>
+          <li>
+              <strong>{"systemctl"}</strong> {' — '} {"start/enable httpd para subir e habilitar no boot."}
+            </li>
+          <li>
+              <strong>{"SELinux"}</strong> {' — '} {"contextos httpd_sys_content_t para conteúdo Web."}
+            </li>
+          </ul>
+          <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Apache?</h2>
         <p>
           O <strong>Apache HTTP Server</strong> (httpd) é o servidor web mais usado da história. Ele é
           extremamente flexível com suporte a <code>.htaccess</code>, módulos dinâmicos e configuração

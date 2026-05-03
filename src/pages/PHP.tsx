@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> PHP no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"PHP"}</strong> {' — '} {"linguagem dinâmica para Web."}
+            </li>
+          <li>
+              <strong>{"php-fpm"}</strong> {' — '} {"FastCGI Process Manager."}
+            </li>
+          <li>
+              <strong>{"Composer"}</strong> {' — '} {"gerenciador de dependências."}
+            </li>
+          <li>
+              <strong>{"php.ini"}</strong> {' — '} {"config principal."}
+            </li>
+          <li>
+              <strong>{"Modules"}</strong> {' — '} {"dnf module install php:8.2."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> PHP no Fedora</h2>
         <p>
           O <strong>PHP</strong> é uma das linguagens mais usadas para desenvolvimento web. Ele alimenta
           WordPress, Laravel, Symfony e milhões de sites na internet. O Fedora mantém versões recentes

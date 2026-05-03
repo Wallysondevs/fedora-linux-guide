@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><Gamepad2 className="inline-block mr-2 mb-1 w-5 h-5" /> Gaming no Linux</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Steam"}</strong> {' — '} {"via Flatpak (recomendado) ou RPM."}
+            </li>
+          <li>
+              <strong>{"Proton"}</strong> {' — '} {"camada Wine para jogos Windows."}
+            </li>
+          <li>
+              <strong>{"Lutris"}</strong> {' — '} {"launcher universal."}
+            </li>
+          <li>
+              <strong>{"Mesa"}</strong> {' — '} {"drivers OpenGL/Vulkan."}
+            </li>
+          <li>
+              <strong>{"DXVK/VKD3D"}</strong> {' — '} {"traduzem DirectX para Vulkan."}
+            </li>
+          </ul>
+          <h2><Gamepad2 className="inline-block mr-2 mb-1 w-5 h-5" /> Gaming no Linux</h2>
         <p>
           O gaming no Linux evoluiu enormemente nos últimos anos, especialmente graças ao <strong>Proton</strong>
           da Valve (baseado no Wine), que permite rodar jogos Windows no Linux. O Fedora é uma excelente

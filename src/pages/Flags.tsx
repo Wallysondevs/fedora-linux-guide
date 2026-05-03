@@ -11,7 +11,28 @@ export default function Flags() {
       difficulty="iniciante"
       timeToRead="30 min"
     >
-      <h2><HelpCircle className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Flags e Parâmetros?</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"-h/--help"}</strong> {' — '} {"mostra ajuda."}
+          </li>
+        <li>
+            <strong>{"-v/-vv"}</strong> {' — '} {"verbose, mais V mais detalhe."}
+          </li>
+        <li>
+            <strong>{"-f"}</strong> {' — '} {"força a operação."}
+          </li>
+        <li>
+            <strong>{"-r"}</strong> {' — '} {"recursivo."}
+          </li>
+        <li>
+            <strong>{"-i"}</strong> {' — '} {"interativo (confirma)."}
+          </li>
+        </ul>
+        <h2><HelpCircle className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Flags e Parâmetros?</h2>
       <p>
         Todo comando Linux aceita <strong>entradas extras</strong> que modificam seu comportamento. Essas entradas se dividem em:
       </p>

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="40 min"
       >
-        <h2><Box className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Containers?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Podman"}</strong> {' — '} {"runtime sem daemon, padrão no Fedora."}
+            </li>
+          <li>
+              <strong>{"Docker"}</strong> {' — '} {"também disponível mas Podman é nativo."}
+            </li>
+          <li>
+              <strong>{"Rootless"}</strong> {' — '} {"containers como usuário comum, sem root."}
+            </li>
+          <li>
+              <strong>{"systemd integration"}</strong> {' — '} {"podman generate systemd cria units."}
+            </li>
+          <li>
+              <strong>{"OCI"}</strong> {' — '} {"padrão de imagens; Podman é compatível."}
+            </li>
+          </ul>
+          <h2><Box className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Containers?</h2>
         <p>
           Containers são ambientes isolados e leves que empacotam uma aplicação com todas as suas dependências (bibliotecas, runtime, configurações). Diferente de máquinas virtuais, containers compartilham o kernel do host, tornando-os muito mais rápidos e eficientes em recursos.
         </p>

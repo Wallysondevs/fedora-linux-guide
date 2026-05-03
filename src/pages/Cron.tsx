@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><Clock className="inline-block mr-2 mb-1 w-5 h-5" /> Agendamento no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"cron"}</strong> {' — '} {"agenda jobs; sintaxe min hora dia mês dow."}
+            </li>
+          <li>
+              <strong>{"crontab -e"}</strong> {' — '} {"edita crontab do usuário."}
+            </li>
+          <li>
+              <strong>{"anacron"}</strong> {' — '} {"executa jobs perdidos quando máquina liga."}
+            </li>
+          <li>
+              <strong>{"systemd timer"}</strong> {' — '} {"alternativa moderna."}
+            </li>
+          <li>
+              <strong>{"/etc/cron.d/"}</strong> {' — '} {"jobs do sistema."}
+            </li>
+          </ul>
+          <h2><Clock className="inline-block mr-2 mb-1 w-5 h-5" /> Agendamento no Fedora</h2>
         <p>
           O Fedora oferece duas formas de agendar tarefas: o clássico <strong>cron</strong> e os modernos
           <strong> systemd timers</strong>. Ambos permitem executar comandos ou scripts automaticamente

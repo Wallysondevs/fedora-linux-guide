@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="15 min"
       >
-        <h2><BookOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Man Pages</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"man"}</strong> {' — '} {"manual de comandos: man ls."}
+            </li>
+          <li>
+              <strong>{"Seções"}</strong> {' — '} {"1=user, 5=files, 8=admin."}
+            </li>
+          <li>
+              <strong>{"apropos"}</strong> {' — '} {"busca por palavra-chave."}
+            </li>
+          <li>
+              <strong>{"info"}</strong> {' — '} {"documentação mais detalhada (GNU)."}
+            </li>
+          <li>
+              <strong>{"tldr"}</strong> {' — '} {"resumos com exemplos práticos."}
+            </li>
+          </ul>
+          <h2><BookOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Man Pages</h2>
         <p>
           As <strong>man pages</strong> (manual pages) são a documentação oficial de cada comando do Linux.
           Praticamente todo comando tem uma man page com descrição completa, opções e exemplos.

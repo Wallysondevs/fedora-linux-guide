@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="30 min"
       >
-        <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Flatpak?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Flatpak"}</strong> {' — '} {"sandbox de apps universal."}
+            </li>
+          <li>
+              <strong>{"Flathub"}</strong> {' — '} {"principal repositório."}
+            </li>
+          <li>
+              <strong>{"runtimes"}</strong> {' — '} {"dependências compartilhadas."}
+            </li>
+          <li>
+              <strong>{"flatpak install/run"}</strong> {' — '} {"instala/executa."}
+            </li>
+          <li>
+              <strong>{"Permissions"}</strong> {' — '} {"flatpak override controla acesso."}
+            </li>
+          </ul>
+          <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Flatpak?</h2>
         <p>
           <strong>Flatpak</strong> é um sistema de distribuição de aplicativos para Linux que funciona em qualquer distribuição. Diferente de pacotes RPM ou DEB, os Flatpaks são <strong>sandboxed</strong> (executam em um ambiente isolado) e trazem suas próprias dependências, eliminando conflitos de versão.
         </p>

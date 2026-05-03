@@ -11,7 +11,28 @@ export default function Visualizacao() {
       difficulty="iniciante"
       timeToRead="30 min"
     >
-      <h2><Eye className="inline-block mr-2 mb-1 w-5 h-5" /> cat — Exibir Conteúdo</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"cat/less/more"}</strong> {' — '} {"visualizadores."}
+          </li>
+        <li>
+            <strong>{"head/tail"}</strong> {' — '} {"início/fim."}
+          </li>
+        <li>
+            <strong>{"bat"}</strong> {' — '} {"cat com syntax highlight."}
+          </li>
+        <li>
+            <strong>{"lnav"}</strong> {' — '} {"log navigator."}
+          </li>
+        <li>
+            <strong>{"glow"}</strong> {' — '} {"renderiza markdown."}
+          </li>
+        </ul>
+        <h2><Eye className="inline-block mr-2 mb-1 w-5 h-5" /> cat — Exibir Conteúdo</h2>
       <p>O <code>cat</code> (concatenate) exibe o conteúdo de arquivos. Ideal para arquivos curtos.</p>
       <CodeBlock
         code={`# Exibir conteúdo de um arquivo

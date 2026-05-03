@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Java no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"java"}</strong> {' — '} {"runtime; várias versões via dnf module."}
+            </li>
+          <li>
+              <strong>{"javac"}</strong> {' — '} {"compilador."}
+            </li>
+          <li>
+              <strong>{"Maven/Gradle"}</strong> {' — '} {"build tools."}
+            </li>
+          <li>
+              <strong>{"JDK vs JRE"}</strong> {' — '} {"dev kit vs runtime."}
+            </li>
+          <li>
+              <strong>{"OpenJDK"}</strong> {' — '} {"implementação livre."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Java no Fedora</h2>
         <p>
           O Fedora usa <strong>OpenJDK</strong>, a implementação open source do Java. Como o Fedora é uma
           distro Red Hat (criadora do OpenJDK), ele sempre tem as versões mais recentes e bem mantidas.

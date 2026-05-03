@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Settings className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Variáveis de Ambiente?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"env"}</strong> {' — '} {"lista variáveis."}
+            </li>
+          <li>
+              <strong>{"export"}</strong> {' — '} {"define no shell."}
+            </li>
+          <li>
+              <strong>{"/etc/environment"}</strong> {' — '} {"globais."}
+            </li>
+          <li>
+              <strong>{"~/.bashrc"}</strong> {' — '} {"por usuário."}
+            </li>
+          <li>
+              <strong>{"$PATH"}</strong> {' — '} {"onde shell procura comandos."}
+            </li>
+          </ul>
+          <h2><Settings className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Variáveis de Ambiente?</h2>
         <p>
           Variáveis de ambiente são valores nomeados que ficam disponíveis para todos os processos
           do sistema. Elas configuram comportamentos como onde o sistema busca executáveis (<code>PATH</code>),

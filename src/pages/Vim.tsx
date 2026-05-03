@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="40 min"
       >
-        <h2><FileText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é o Vim?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"vim"}</strong> {' — '} {"editor modal."}
+            </li>
+          <li>
+              <strong>{"Modes"}</strong> {' — '} {"normal, insert, visual, command."}
+            </li>
+          <li>
+              <strong>{"hjkl"}</strong> {' — '} {"movimento."}
+            </li>
+          <li>
+              <strong>{"Plugins"}</strong> {' — '} {"via vim-plug, packer."}
+            </li>
+          <li>
+              <strong>{"Neovim"}</strong> {' — '} {"fork moderno."}
+            </li>
+          </ul>
+          <h2><FileText className="inline-block mr-2 mb-1 w-5 h-5" /> O que é o Vim?</h2>
         <p>
           O <strong>Vim</strong> (Vi Improved) é um dos editores de texto mais poderosos e eficientes do mundo Linux.
           Ele funciona inteiramente no terminal, não precisa de mouse, e depois que você aprende seus

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><GitBranch className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Git?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"git"}</strong> {' — '} {"controle de versão."}
+            </li>
+          <li>
+              <strong>{"clone/pull/push"}</strong> {' — '} {"sincroniza com remoto."}
+            </li>
+          <li>
+              <strong>{"add/commit"}</strong> {' — '} {"prepara e grava mudanças."}
+            </li>
+          <li>
+              <strong>{"branch/checkout"}</strong> {' — '} {"cria/troca branch."}
+            </li>
+          <li>
+              <strong>{"merge/rebase"}</strong> {' — '} {"integra mudanças entre branches."}
+            </li>
+          </ul>
+          <h2><GitBranch className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Git?</h2>
         <p>
           O <strong>Git</strong> é o sistema de controle de versão mais usado no mundo. Ele rastreia
           todas as mudanças nos seus arquivos, permite voltar a versões anteriores, trabalhar em

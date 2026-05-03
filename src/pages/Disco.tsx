@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="20 min"
       >
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Verificar Espaço em Disco</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"lsblk"}</strong> {' — '} {"árvore de blocos."}
+            </li>
+          <li>
+              <strong>{"df -h"}</strong> {' — '} {"uso de filesystems."}
+            </li>
+          <li>
+              <strong>{"du -sh"}</strong> {' — '} {"tamanho de pastas."}
+            </li>
+          <li>
+              <strong>{"fdisk/parted"}</strong> {' — '} {"particionamento."}
+            </li>
+          <li>
+              <strong>{"mkfs"}</strong> {' — '} {"formata filesystem."}
+            </li>
+          </ul>
+          <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> Verificar Espaço em Disco</h2>
         <CodeBlock
           code={`# Espaço por partição
   df -h

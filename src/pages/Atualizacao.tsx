@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="30 min"
       >
-        <h2><RefreshCw className="inline-block mr-2 mb-1 w-5 h-5" /> Por que Atualizar?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"dnf upgrade"}</strong> {' — '} {"atualiza todos os pacotes."}
+            </li>
+          <li>
+              <strong>{"dnf check-update"}</strong> {' — '} {"lista pacotes atualizáveis."}
+            </li>
+          <li>
+              <strong>{"needs-restarting"}</strong> {' — '} {"indica se reboot é necessário."}
+            </li>
+          <li>
+              <strong>{"Releases"}</strong> {' — '} {"dnf system-upgrade para mudar versão do Fedora."}
+            </li>
+          <li>
+              <strong>{"Mirror"}</strong> {' — '} {"dnf escolhe mirror mais próximo automaticamente."}
+            </li>
+          </ul>
+          <h2><RefreshCw className="inline-block mr-2 mb-1 w-5 h-5" /> Por que Atualizar?</h2>
         <p>
           Manter o sistema atualizado é uma das práticas mais importantes no Linux. As atualizações corrigem <strong>falhas de segurança</strong>, melhoram a <strong>estabilidade</strong>, adicionam <strong>novos recursos</strong> e garantem <strong>compatibilidade</strong> com hardware recente.
         </p>

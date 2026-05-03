@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="30 min"
       >
-        <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Fail2Ban?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Fail2Ban"}</strong> {' — '} {"baneia IPs com tentativas suspeitas."}
+            </li>
+          <li>
+              <strong>{"Jails"}</strong> {' — '} {"regras por serviço (ssh, sshd-ddos)."}
+            </li>
+          <li>
+              <strong>{"filters"}</strong> {' — '} {"regex de detecção em logs."}
+            </li>
+          <li>
+              <strong>{"actions"}</strong> {' — '} {"firewalld, iptables, email."}
+            </li>
+          <li>
+              <strong>{"fail2ban-client"}</strong> {' — '} {"status e gerenciamento."}
+            </li>
+          </ul>
+          <h2><Shield className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Fail2Ban?</h2>
         <p>
           O <strong>Fail2Ban</strong> monitora logs do sistema e bloqueia automaticamente IPs que fazem
           muitas tentativas falhas de login. Ele é essencial para qualquer servidor exposto à internet,

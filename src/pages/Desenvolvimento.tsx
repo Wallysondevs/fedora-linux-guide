@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="45 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Ferramentas Base</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Toolbox"}</strong> {' — '} {"ambiente containerizado para devs."}
+            </li>
+          <li>
+              <strong>{"gcc/g++"}</strong> {' — '} {"compiladores C/C++."}
+            </li>
+          <li>
+              <strong>{"Make/CMake"}</strong> {' — '} {"sistemas de build."}
+            </li>
+          <li>
+              <strong>{"Code editors"}</strong> {' — '} {"VSCode, Neovim, GNOME Builder."}
+            </li>
+          <li>
+              <strong>{"rpmbuild"}</strong> {' — '} {"para empacotar .rpm."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Ferramentas Base</h2>
         <CodeBlock
           code={`# Instalar grupo de ferramentas de compilação
   sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"

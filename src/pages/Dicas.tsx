@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><Lightbulb className="inline-block mr-2 mb-1 w-5 h-5" /> Produtividade no Terminal</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"tab completion"}</strong> {' — '} {"TAB autocompleta comandos e paths."}
+            </li>
+          <li>
+              <strong>{"history"}</strong> {' — '} {"reusa comandos antigos: !!, !$, Ctrl+R."}
+            </li>
+          <li>
+              <strong>{"man/info/--help"}</strong> {' — '} {"três fontes de documentação."}
+            </li>
+          <li>
+              <strong>{"screen/tmux"}</strong> {' — '} {"sessões persistentes no terminal."}
+            </li>
+          <li>
+              <strong>{"DNF history"}</strong> {' — '} {"dnf history undo desfaz transações."}
+            </li>
+          </ul>
+          <h2><Lightbulb className="inline-block mr-2 mb-1 w-5 h-5" /> Produtividade no Terminal</h2>
 
         <h3>Histórico e Navegação</h3>
         <CodeBlock

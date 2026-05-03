@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Terminal className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Zsh?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Zsh"}</strong> {' — '} {"shell alternativo a Bash."}
+            </li>
+          <li>
+              <strong>{"Oh My Zsh"}</strong> {' — '} {"framework de configurações."}
+            </li>
+          <li>
+              <strong>{"Powerlevel10k"}</strong> {' — '} {"tema rápido e bonito."}
+            </li>
+          <li>
+              <strong>{"Plugins"}</strong> {' — '} {"autosuggestions, syntax-highlighting."}
+            </li>
+          <li>
+              <strong>{"chsh"}</strong> {' — '} {"muda shell padrão."}
+            </li>
+          </ul>
+          <h2><Terminal className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Zsh?</h2>
         <p>
           O <strong>Zsh</strong> (Z Shell) é uma alternativa poderosa ao Bash. Ele oferece auto-completar
           avançado, correção de erros, temas visuais, plugins e muitos recursos que tornam o uso do

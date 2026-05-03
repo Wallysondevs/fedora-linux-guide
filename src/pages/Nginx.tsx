@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Nginx?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"nginx"}</strong> {' — '} {"servidor Web/proxy reverso de alta performance."}
+            </li>
+          <li>
+              <strong>{"/etc/nginx/conf.d/"}</strong> {' — '} {"virtual hosts."}
+            </li>
+          <li>
+              <strong>{"systemctl"}</strong> {' — '} {"start/enable nginx."}
+            </li>
+          <li>
+              <strong>{"nginx -t"}</strong> {' — '} {"testa configuração."}
+            </li>
+          <li>
+              <strong>{"SELinux"}</strong> {' — '} {"use httpd_can_network_connect quando proxy."}
+            </li>
+          </ul>
+          <h2><Server className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Nginx?</h2>
         <p>
           O <strong>Nginx</strong> (pronuncia-se "Engine X") é um dos servidores web mais populares do mundo.
           Ele pode servir páginas estáticas, funcionar como <strong>proxy reverso</strong> (encaminhar

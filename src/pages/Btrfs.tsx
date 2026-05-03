@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="40 min"
       >
-        <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Btrfs?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Btrfs"}</strong> {' — '} {"filesystem padrão do Fedora — copy-on-write."}
+            </li>
+          <li>
+              <strong>{"Subvolume"}</strong> {' — '} {"partição lógica dentro do mesmo volume."}
+            </li>
+          <li>
+              <strong>{"Snapshot"}</strong> {' — '} {"foto instantânea — ocupa quase nada inicialmente."}
+            </li>
+          <li>
+              <strong>{"Compressão"}</strong> {' — '} {"zstd transparente economiza espaço."}
+            </li>
+          <li>
+              <strong>{"Scrub"}</strong> {' — '} {"verifica integridade lendo todos os blocos."}
+            </li>
+          </ul>
+          <h2><HardDrive className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Btrfs?</h2>
         <p>
           O <strong>Btrfs (B-tree File System)</strong> é o filesystem padrão do Fedora desde a versão 33. Ele oferece recursos avançados que o ext4 não possui: snapshots instantâneos, subvolumes, compressão transparente, checksums de dados e suporte a RAID integrado.
         </p>

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="20 min"
       >
-        <h2><Archive className="inline-block mr-2 mb-1 w-5 h-5" /> Compressão no Linux</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"gzip/bzip2/xz/zstd"}</strong> {' — '} {"algoritmos comuns; zstd melhor relação velocidade/tamanho."}
+            </li>
+          <li>
+              <strong>{"tar"}</strong> {' — '} {"agrupa arquivos antes de comprimir."}
+            </li>
+          <li>
+              <strong>{"zip"}</strong> {' — '} {"formato cross-platform."}
+            </li>
+          <li>
+              <strong>{"7z"}</strong> {' — '} {"alta compressão, multiplataforma."}
+            </li>
+          <li>
+              <strong>{"Streams"}</strong> {' — '} {"pipe direto: tar c pasta | zstd > a.tar.zst."}
+            </li>
+          </ul>
+          <h2><Archive className="inline-block mr-2 mb-1 w-5 h-5" /> Compressão no Linux</h2>
         <p>
           O Linux separa dois conceitos: <strong>empacotamento</strong> (juntar vários arquivos em um — tar)
           e <strong>compressão</strong> (reduzir tamanho — gzip, bzip2, xz). O <code>tar</code> faz ambos

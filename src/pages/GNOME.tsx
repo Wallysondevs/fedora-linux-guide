@@ -11,7 +11,28 @@ export default function GNOME() {
       difficulty="iniciante"
       timeToRead="40 min"
     >
-      <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> O GNOME no Fedora</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"GNOME"}</strong> {' — '} {"desktop padrão do Fedora."}
+          </li>
+        <li>
+            <strong>{"Mutter"}</strong> {' — '} {"window manager."}
+          </li>
+        <li>
+            <strong>{"GTK"}</strong> {' — '} {"toolkit gráfico."}
+          </li>
+        <li>
+            <strong>{"gsettings"}</strong> {' — '} {"CLI para configurações."}
+          </li>
+        <li>
+            <strong>{"Wayland"}</strong> {' — '} {"servidor gráfico padrão."}
+          </li>
+        </ul>
+        <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> O GNOME no Fedora</h2>
       <p>
         O Fedora Workstation usa o <strong>GNOME</strong> como ambiente desktop padrão. O Fedora sempre utiliza a versão mais recente do GNOME — frequentemente sendo a primeira distribuição a lançar uma nova versão. O GNOME segue um design minimalista, focado em produtividade e facilidade de uso.
       </p>

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="30 min"
       >
-        <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é LUKS?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"LUKS"}</strong> {' — '} {"criptografia full-disk padrão no Linux."}
+            </li>
+          <li>
+              <strong>{"cryptsetup"}</strong> {' — '} {"ferramenta CLI."}
+            </li>
+          <li>
+              <strong>{"dm-crypt"}</strong> {' — '} {"módulo do kernel."}
+            </li>
+          <li>
+              <strong>{"Passphrase"}</strong> {' — '} {"senha para desbloquear."}
+            </li>
+          <li>
+              <strong>{"/etc/crypttab"}</strong> {' — '} {"volumes para abrir no boot."}
+            </li>
+          </ul>
+          <h2><Lock className="inline-block mr-2 mb-1 w-5 h-5" /> O que é LUKS?</h2>
         <p>
           O <strong>LUKS</strong> (Linux Unified Key Setup) é o padrão de criptografia de disco no Linux.
           Ele criptografa partições inteiras, tornando os dados ilegíveis sem a senha correta. Mesmo que

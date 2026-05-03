@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="35 min"
       >
-        <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é RPM?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"RPM"}</strong> {' — '} {"formato de pacotes do Fedora/RHEL."}
+            </li>
+          <li>
+              <strong>{"rpm -ivh"}</strong> {' — '} {"instala pacote."}
+            </li>
+          <li>
+              <strong>{"rpm -qa"}</strong> {' — '} {"lista instalados."}
+            </li>
+          <li>
+              <strong>{"rpmbuild"}</strong> {' — '} {"cria pacotes."}
+            </li>
+          <li>
+              <strong>{"SPEC"}</strong> {' — '} {"arquivo que descreve o pacote."}
+            </li>
+          </ul>
+          <h2><Package className="inline-block mr-2 mb-1 w-5 h-5" /> O que é RPM?</h2>
         <p>
           O <strong>RPM</strong> (Red Hat Package Manager) é o formato de pacotes usado pelo Fedora, RHEL, CentOS, openSUSE e outras distribuições. Enquanto o <strong>DNF</strong> é o gerenciador de alto nível (resolve dependências, baixa de repositórios), o <strong>rpm</strong> é a ferramenta de baixo nível que manipula pacotes individuais.
         </p>

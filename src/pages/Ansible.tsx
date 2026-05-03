@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Settings className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Ansible?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Ansible"}</strong> {' — '} {"automação sem agente — usa SSH."}
+            </li>
+          <li>
+              <strong>{"Playbook"}</strong> {' — '} {"arquivo YAML com tarefas a executar."}
+            </li>
+          <li>
+              <strong>{"Inventory"}</strong> {' — '} {"lista de hosts gerenciados."}
+            </li>
+          <li>
+              <strong>{"Role"}</strong> {' — '} {"conjunto reutilizável de tasks/templates/vars."}
+            </li>
+          <li>
+              <strong>{"Idempotência"}</strong> {' — '} {"executar várias vezes produz o mesmo estado."}
+            </li>
+          </ul>
+          <h2><Settings className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Ansible?</h2>
         <p>
           O <strong>Ansible</strong> é uma ferramenta de automação que permite configurar e gerenciar
           dezenas ou centenas de servidores ao mesmo tempo, usando arquivos YAML simples chamados

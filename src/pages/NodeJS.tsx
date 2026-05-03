@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Node.js no Fedora</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Node.js"}</strong> {' — '} {"runtime JS server-side."}
+            </li>
+          <li>
+              <strong>{"nodejs/npm"}</strong> {' — '} {"pacotes via DNF."}
+            </li>
+          <li>
+              <strong>{"nvm"}</strong> {' — '} {"gerencia múltiplas versões."}
+            </li>
+          <li>
+              <strong>{"pnpm/yarn"}</strong> {' — '} {"alternativas ao npm."}
+            </li>
+          <li>
+              <strong>{"Module"}</strong> {' — '} {"dnf module install nodejs:18."}
+            </li>
+          </ul>
+          <h2><Code className="inline-block mr-2 mb-1 w-5 h-5" /> Node.js no Fedora</h2>
         <p>
           O <strong>Node.js</strong> permite executar JavaScript fora do navegador, ideal para servidores web,
           APIs, ferramentas CLI e muito mais. O Fedora oferece Node.js via DNF ou via <strong>NVM</strong>

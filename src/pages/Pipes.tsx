@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="30 min"
       >
-        <h2><GitMerge className="inline-block mr-2 mb-1 w-5 h-5" /> A Filosofia Unix</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"|"}</strong> {' — '} {"pipe — saída de um comando vira entrada de outro."}
+            </li>
+          <li>
+              <strong>{">/<"}</strong> {' — '} {"redireciona saída/entrada."}
+            </li>
+          <li>
+              <strong>{">>"}</strong> {' — '} {"append."}
+            </li>
+          <li>
+              <strong>{"2>"}</strong> {' — '} {"redireciona stderr."}
+            </li>
+          <li>
+              <strong>{"tee"}</strong> {' — '} {"grava em arquivo e continua o pipe."}
+            </li>
+          </ul>
+          <h2><GitMerge className="inline-block mr-2 mb-1 w-5 h-5" /> A Filosofia Unix</h2>
         <p>
           O Linux segue a filosofia Unix: <strong>cada comando faz uma coisa e faz bem</strong>. A força real vem de combinar comandos simples com pipes e redirecionamento. Com isso, você resolve problemas complexos com uma linha no terminal.
         </p>

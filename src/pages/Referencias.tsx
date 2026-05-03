@@ -83,7 +83,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="10 min"
       >
-        <AlertBox type="info" title="Continue aprendendo!">
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"docs.fedoraproject.org"}</strong> {' — '} {"documentação oficial."}
+            </li>
+          <li>
+              <strong>{"Ask Fedora"}</strong> {' — '} {"fórum de suporte."}
+            </li>
+          <li>
+              <strong>{"Reddit r/Fedora"}</strong> {' — '} {"comunidade ativa."}
+            </li>
+          <li>
+              <strong>{"Magazine"}</strong> {' — '} {"fedoramagazine.org — tutoriais."}
+            </li>
+          <li>
+              <strong>{"Discourse"}</strong> {' — '} {"discussões da comunidade."}
+            </li>
+          </ul>
+          <AlertBox type="info" title="Continue aprendendo!">
           O Fedora tem uma das melhores comunidades do mundo Linux. Use esses recursos para tirar dúvidas, encontrar tutoriais e se manter atualizado sobre as novidades do ecossistema.
         </AlertBox>
 

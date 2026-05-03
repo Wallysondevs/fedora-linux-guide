@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="25 min"
       >
-        <h2><BookOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Origens do Projeto</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Fedora"}</strong> {' — '} {"derivado do Red Hat Linux, lançado em 2003."}
+            </li>
+          <li>
+              <strong>{"Red Hat"}</strong> {' — '} {"patrocina o desenvolvimento."}
+            </li>
+          <li>
+              <strong>{"RHEL"}</strong> {' — '} {"derivado estável do Fedora."}
+            </li>
+          <li>
+              <strong>{"CentOS Stream"}</strong> {' — '} {"rolling preview do RHEL."}
+            </li>
+          <li>
+              <strong>{"Comunidade"}</strong> {' — '} {"Fedora Project gerencia."}
+            </li>
+          </ul>
+          <h2><BookOpen className="inline-block mr-2 mb-1 w-5 h-5" /> Origens do Projeto</h2>
         <p>
           O Fedora nasceu em 2003, quando a Red Hat decidiu separar sua distribuição em dois projetos distintos: o <strong>Red Hat Enterprise Linux (RHEL)</strong>, voltado para empresas, e o <strong>Fedora</strong>, uma distribuição comunitária e de código aberto. Antes disso, existia o <strong>Red Hat Linux</strong>, que atendia tanto o público doméstico quanto corporativo.
         </p>

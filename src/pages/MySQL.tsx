@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Database className="inline-block mr-2 mb-1 w-5 h-5" /> MySQL vs MariaDB</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"MariaDB"}</strong> {' — '} {"fork do MySQL — preferido no Fedora."}
+            </li>
+          <li>
+              <strong>{"mysql_secure_installation"}</strong> {' — '} {"assistente inicial de segurança."}
+            </li>
+          <li>
+              <strong>{"systemctl"}</strong> {' — '} {"start/enable mariadb."}
+            </li>
+          <li>
+              <strong>{"Backup"}</strong> {' — '} {"mysqldump."}
+            </li>
+          <li>
+              <strong>{"my.cnf"}</strong> {' — '} {"arquivo de config."}
+            </li>
+          </ul>
+          <h2><Database className="inline-block mr-2 mb-1 w-5 h-5" /> MySQL vs MariaDB</h2>
         <p>
           O <strong>MariaDB</strong> é o banco de dados relacional padrão no Fedora — é um fork open source
           do MySQL, criado pelo próprio fundador do MySQL. Os comandos e a sintaxe SQL são praticamente

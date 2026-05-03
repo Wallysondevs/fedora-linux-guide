@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="35 min"
       >
-        <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> O que é KVM?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"KVM"}</strong> {' — '} {"virtualização nativa do Linux."}
+            </li>
+          <li>
+              <strong>{"QEMU"}</strong> {' — '} {"emulador usado com KVM."}
+            </li>
+          <li>
+              <strong>{"libvirt"}</strong> {' — '} {"API de gerenciamento."}
+            </li>
+          <li>
+              <strong>{"virt-manager"}</strong> {' — '} {"GUI para VMs."}
+            </li>
+          <li>
+              <strong>{"virsh"}</strong> {' — '} {"CLI para libvirt."}
+            </li>
+          </ul>
+          <h2><Monitor className="inline-block mr-2 mb-1 w-5 h-5" /> O que é KVM?</h2>
         <p>
           O <strong>KVM</strong> (Kernel-based Virtual Machine) é a tecnologia de virtualização nativa do Linux,
           integrada diretamente no kernel. No Fedora, o KVM trabalha junto com o <strong>QEMU</strong> (emulador)

@@ -11,7 +11,28 @@ export default function Processos() {
       difficulty="intermediario"
       timeToRead="35 min"
     >
-      <h2><List className="inline-block mr-2 mb-1 w-5 h-5" /> O que é um Processo?</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"ps"}</strong> {' — '} {"lista processos."}
+          </li>
+        <li>
+            <strong>{"top/htop"}</strong> {' — '} {"monitor em tempo real."}
+          </li>
+        <li>
+            <strong>{"kill"}</strong> {' — '} {"envia sinal a processo."}
+          </li>
+        <li>
+            <strong>{"nice/renice"}</strong> {' — '} {"prioridade."}
+          </li>
+        <li>
+            <strong>{"systemd-cgls"}</strong> {' — '} {"árvore de cgroups."}
+          </li>
+        </ul>
+        <h2><List className="inline-block mr-2 mb-1 w-5 h-5" /> O que é um Processo?</h2>
       <p>
         Todo programa em execução no Linux é um <strong>processo</strong>. Cada processo tem um identificador único chamado <strong>PID</strong> (Process ID). O processo pai que iniciou o sistema é o <strong>systemd</strong> (PID 1) — todos os demais processos são filhos ou descendentes dele.
       </p>

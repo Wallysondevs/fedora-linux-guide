@@ -11,7 +11,28 @@ export default function Navegacao() {
       difficulty="iniciante"
       timeToRead="30 min"
     >
-      <h2><Navigation className="inline-block mr-2 mb-1 w-5 h-5" /> pwd — Onde Estou?</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"cd"}</strong> {' — '} {"muda diretório."}
+          </li>
+        <li>
+            <strong>{"pwd"}</strong> {' — '} {"mostra path atual."}
+          </li>
+        <li>
+            <strong>{"~"}</strong> {' — '} {"home do usuário."}
+          </li>
+        <li>
+            <strong>{"../"}</strong> {' — '} {"diretório pai."}
+          </li>
+        <li>
+            <strong>{"pushd/popd"}</strong> {' — '} {"pilha de diretórios."}
+          </li>
+        </ul>
+        <h2><Navigation className="inline-block mr-2 mb-1 w-5 h-5" /> pwd — Onde Estou?</h2>
       <p>
         O <code>pwd</code> (Print Working Directory) mostra o caminho completo do diretório em que você está.
       </p>

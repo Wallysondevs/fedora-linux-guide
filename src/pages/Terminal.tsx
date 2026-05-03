@@ -11,7 +11,28 @@ export default function Terminal() {
       difficulty="intermediario"
       timeToRead="60 min"
     >
-      <h2><TermIcon className="inline-block mr-2 mb-1 w-5 h-5" /> O Shell Bash</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"GNOME Terminal"}</strong> {' — '} {"padrão."}
+          </li>
+        <li>
+            <strong>{"Alternativas"}</strong> {' — '} {"Tilix, Kitty, Alacritty."}
+          </li>
+        <li>
+            <strong>{"Multiplexers"}</strong> {' — '} {"tmux, screen."}
+          </li>
+        <li>
+            <strong>{"Color schemes"}</strong> {' — '} {"base16, gruvbox, etc."}
+          </li>
+        <li>
+            <strong>{"Fonts"}</strong> {' — '} {"JetBrains Mono, Fira Code."}
+          </li>
+        </ul>
+        <h2><TermIcon className="inline-block mr-2 mb-1 w-5 h-5" /> O Shell Bash</h2>
       <p>
         O <strong>Bash</strong> (Bourne Again SHell) é o shell padrão no Fedora. É a interface de linha de comando que interpreta seus comandos e scripts.
       </p>

@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="35 min"
       >
-        <h2><Rocket className="inline-block mr-2 mb-1 w-5 h-5" /> Visão Geral</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Terminal"}</strong> {' — '} {"GNOME Terminal padrão."}
+            </li>
+          <li>
+              <strong>{"Shell"}</strong> {' — '} {"Bash padrão; Zsh popular."}
+            </li>
+          <li>
+              <strong>{"Prompt"}</strong> {' — '} {"exibe usuário, host, path."}
+            </li>
+          <li>
+              <strong>{"sudo"}</strong> {' — '} {"executa como root."}
+            </li>
+          <li>
+              <strong>{"root"}</strong> {' — '} {"superusuário do sistema."}
+            </li>
+          </ul>
+          <h2><Rocket className="inline-block mr-2 mb-1 w-5 h-5" /> Visão Geral</h2>
         <p>
           Após instalar o Fedora, há vários passos importantes para deixar o sistema pronto para uso diário. O Fedora vem com uma base sólida, mas por sua filosofia de usar apenas software livre por padrão, alguns extras precisam ser instalados manualmente — como codecs de vídeo, drivers proprietários e repositórios adicionais.
         </p>

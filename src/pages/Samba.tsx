@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><FolderSync className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Samba?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Samba"}</strong> {' — '} {"compartilhamento SMB/CIFS com Windows."}
+            </li>
+          <li>
+              <strong>{"/etc/samba/smb.conf"}</strong> {' — '} {"config principal."}
+            </li>
+          <li>
+              <strong>{"smbpasswd"}</strong> {' — '} {"define senha SMB."}
+            </li>
+          <li>
+              <strong>{"firewall"}</strong> {' — '} {"allow samba service."}
+            </li>
+          <li>
+              <strong>{"SELinux"}</strong> {' — '} {"samba_share_t no conteúdo."}
+            </li>
+          </ul>
+          <h2><FolderSync className="inline-block mr-2 mb-1 w-5 h-5" /> O que é Samba?</h2>
         <p>
           O <strong>Samba</strong> permite compartilhar arquivos e impressoras entre computadores Linux e Windows
           na mesma rede. É o protocolo <strong>SMB/CIFS</strong>, usado nativamente pelo Windows para

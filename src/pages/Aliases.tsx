@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="20 min"
       >
-        <h2><Terminal className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Aliases?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"Alias"}</strong> {' — '} {"atalho para comando longo: alias ll=\"ls -lah\"."}
+            </li>
+          <li>
+              <strong>{"~/.bashrc"}</strong> {' — '} {"arquivo onde aliases ficam permanentes."}
+            </li>
+          <li>
+              <strong>{"source"}</strong> {' — '} {"recarrega o arquivo: source ~/.bashrc."}
+            </li>
+          <li>
+              <strong>{"unalias"}</strong> {' — '} {"remove um alias da sessão."}
+            </li>
+          <li>
+              <strong>{"Funções"}</strong> {' — '} {"mais flexível que aliases — aceitam parâmetros."}
+            </li>
+          </ul>
+          <h2><Terminal className="inline-block mr-2 mb-1 w-5 h-5" /> O que são Aliases?</h2>
         <p>
           Um <strong>alias</strong> é um atalho para um comando ou sequência de comandos. Em vez de digitar
           <code>sudo dnf update -y && sudo dnf autoremove -y</code> toda vez, você cria um alias como

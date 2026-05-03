@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="iniciante"
         timeToRead="20 min"
       >
-        <h2><Puzzle className="inline-block mr-2 mb-1 w-5 h-5" /> Extensões do GNOME</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"GNOME Extensions"}</strong> {' — '} {"plugins para personalizar o GNOME."}
+            </li>
+          <li>
+              <strong>{"extensions.gnome.org"}</strong> {' — '} {"site oficial para instalar."}
+            </li>
+          <li>
+              <strong>{"gnome-extensions-app"}</strong> {' — '} {"gerencia instaladas."}
+            </li>
+          <li>
+              <strong>{"Compatibilidade"}</strong> {' — '} {"depende da versão do GNOME."}
+            </li>
+          <li>
+              <strong>{"Dash to Dock"}</strong> {' — '} {"extensão popular para taskbar."}
+            </li>
+          </ul>
+          <h2><Puzzle className="inline-block mr-2 mb-1 w-5 h-5" /> Extensões do GNOME</h2>
         <p>
           O GNOME é altamente extensível através de <strong>extensões</strong>. Elas podem adicionar
           funcionalidades como dock, bandeja do sistema, controle de clima, gerenciamento de janelas

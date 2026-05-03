@@ -11,7 +11,28 @@ export default function ManipulacaoArquivos() {
       difficulty="iniciante"
       timeToRead="25 min"
     >
-      <h2><FolderOpen className="inline-block mr-2 mb-1 w-5 h-5" /> touch — Criar Arquivos Vazios</h2>
+      <AlertBox type="info" title="Pré-requisitos">
+          Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+        </AlertBox>
+        <h2>Glossário rápido</h2>
+        <ul>
+          <li>
+            <strong>{"cat/less"}</strong> {' — '} {"exibir conteúdo."}
+          </li>
+        <li>
+            <strong>{"head/tail"}</strong> {' — '} {"primeiras/últimas linhas."}
+          </li>
+        <li>
+            <strong>{"grep"}</strong> {' — '} {"busca por padrão."}
+          </li>
+        <li>
+            <strong>{"sed"}</strong> {' — '} {"editor stream."}
+          </li>
+        <li>
+            <strong>{"awk"}</strong> {' — '} {"processamento por colunas."}
+          </li>
+        </ul>
+        <h2><FolderOpen className="inline-block mr-2 mb-1 w-5 h-5" /> touch — Criar Arquivos Vazios</h2>
       <p>
         O <code>touch</code> cria arquivos vazios ou atualiza a data de modificação de arquivos existentes.
       </p>

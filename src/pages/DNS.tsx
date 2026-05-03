@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="intermediario"
         timeToRead="25 min"
       >
-        <h2><Globe className="inline-block mr-2 mb-1 w-5 h-5" /> O que é DNS?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"DNS"}</strong> {' — '} {"traduz nomes em IPs."}
+            </li>
+          <li>
+              <strong>{"/etc/resolv.conf"}</strong> {' — '} {"servidores DNS do sistema."}
+            </li>
+          <li>
+              <strong>{"systemd-resolved"}</strong> {' — '} {"daemon DNS local com cache."}
+            </li>
+          <li>
+              <strong>{"dig/host/nslookup"}</strong> {' — '} {"ferramentas de query DNS."}
+            </li>
+          <li>
+              <strong>{"NetworkManager"}</strong> {' — '} {"gerencia DNS por conexão."}
+            </li>
+          </ul>
+          <h2><Globe className="inline-block mr-2 mb-1 w-5 h-5" /> O que é DNS?</h2>
         <p>
           O <strong>DNS</strong> (Domain Name System) traduz nomes de domínio (como <code>google.com</code>)
           em endereços IP (como <code>142.250.218.14</code>). Sem DNS, você teria que memorizar IPs

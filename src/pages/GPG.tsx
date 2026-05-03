@@ -11,7 +11,28 @@ import { PageContainer } from "@/components/layout/PageContainer";
         difficulty="avancado"
         timeToRead="30 min"
       >
-        <h2><Key className="inline-block mr-2 mb-1 w-5 h-5" /> O que é GPG?</h2>
+        <AlertBox type="info" title="Pré-requisitos">
+            Ler o capítulo "Primeiros Passos" e ter Fedora instalado (workstation ou server).
+          </AlertBox>
+          <h2>Glossário rápido</h2>
+          <ul>
+            <li>
+              <strong>{"GPG"}</strong> {' — '} {"GNU Privacy Guard — cripto e assinaturas."}
+            </li>
+          <li>
+              <strong>{"Chaves"}</strong> {' — '} {"par pública/privada."}
+            </li>
+          <li>
+              <strong>{"gpg --gen-key"}</strong> {' — '} {"gera chave nova."}
+            </li>
+          <li>
+              <strong>{"Importar/exportar"}</strong> {' — '} {"via --import e --export."}
+            </li>
+          <li>
+              <strong>{"DNF"}</strong> {' — '} {"usa GPG para verificar pacotes."}
+            </li>
+          </ul>
+          <h2><Key className="inline-block mr-2 mb-1 w-5 h-5" /> O que é GPG?</h2>
         <p>
           O <strong>GPG</strong> (GNU Privacy Guard) é a implementação livre do padrão OpenPGP. Ele permite
           <strong> criptografar</strong> arquivos e mensagens (só o destinatário pode ler) e
