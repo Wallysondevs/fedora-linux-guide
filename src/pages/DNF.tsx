@@ -210,8 +210,8 @@ import { PageContainer } from "@/components/layout/PageContainer";
           code={`# Listar repositórios habilitados
   dnf repolist
   # repo id             repo name                          status
-  # fedora              Fedora 41 - x86_64                 74,600
-  # updates             Fedora 41 - x86_64 - Updates       25,300
+  # fedora              Fedora 44 - x86_64                 74,600
+  # updates             Fedora 44 - x86_64 - Updates       25,300
 
   # Listar todos (incluindo desabilitados)
   dnf repolist all
@@ -313,9 +313,9 @@ import { PageContainer } from "@/components/layout/PageContainer";
 
   # Travar versão de um pacote (impedir atualização)
   sudo dnf install dnf-plugin-versionlock
-  sudo dnf versionlock add kernel-6.11.4-301.fc41
+  sudo dnf versionlock add kernel-6.16.3-200.fc41
   sudo dnf versionlock list
-  sudo dnf versionlock delete kernel-6.11.4-301.fc41`}
+  sudo dnf versionlock delete kernel-6.16.3-200.fc41`}
           language="bash"
           title="configuração"
         />

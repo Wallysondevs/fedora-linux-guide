@@ -9,8 +9,10 @@ import { Link, useLocation } from "wouter";
     ShieldCheck, Wrench, Wifi, Puzzle, Settings, Key,
     Database, Globe, Music, Clock, Gamepad2, Wine,
     FileText, Keyboard, GitBranch, Power, Search,
-    Languages, Layers as LayersIcon,
+    Languages, Layers as LayersIcon, Check,
   } from "lucide-react";
+  import { FedoraLogo } from "@/components/ui/FedoraLogo";
+  import { useProgress, TOTAL_LESSONS } from "@/lib/course";
 
   const NAVIGATION = [
     {
@@ -143,6 +145,7 @@ import { Link, useLocation } from "wouter";
 
   export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     const [location] = useLocation();
+    const { has, count, percent } = useProgress();
 
     return (
       <>
@@ -161,12 +164,10 @@ import { Link, useLocation } from "wouter";
           <div className="p-6">
             <div className="flex items-center justify-between lg:justify-center mb-8">
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Cpu className="w-5 h-5 text-primary" />
-                </div>
+                <FedoraLogo size={40} className="shrink-0 group-hover:scale-105 transition-transform" />
                 <div>
                   <h2 className="text-lg font-bold mt-0 mb-0 pb-0 border-0 leading-tight">Fedora</h2>
-                  <p className="text-xs text-muted-foreground">Guia Completo</p>
+                  <p className="text-xs text-muted-foreground">Curso Completo</p>
                 </div>
               </Link>
               <button
@@ -175,6 +176,23 @@ import { Link, useLocation } from "wouter";
               >
                 <X className="w-5 h-5" />
               </button>
+            </div>
+
+            {/* Progresso do curso */}
+            <div className="mb-6 px-3 py-3 rounded-xl bg-muted/60 border border-border">
+              <div className="flex items-center justify-between text-xs mb-1.5">
+                <span className="font-medium text-foreground">Seu progresso</span>
+                <span className="text-primary font-bold">{percent}%</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-muted overflow-hidden">
+                <div
+                  className="h-full bg-primary transition-[width] duration-500"
+                  style={{ width: `${percent}%` }}
+                />
+              </div>
+              <p className="text-[11px] text-muted-foreground mt-1.5">
+                {count} de {TOTAL_LESSONS} lições concluídas
+              </p>
             </div>
 
             <nav className="space-y-8">
@@ -186,6 +204,7 @@ import { Link, useLocation } from "wouter";
                   <ul className="space-y-1">
                     {section.items.map((item, i) => {
                       const isActive = location === item.path;
+                      const isDone = item.path !== "/" && has(item.path);
                       const Icon = item.icon;
                       return (
                         <li key={i}>
@@ -199,9 +218,13 @@ import { Link, useLocation } from "wouter";
                                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
                             )}
                           >
-                            <Icon className={cn("w-4 h-4 shrink-0", isActive ? "text-primary" : "opacity-70")} />
+                            <Icon className={cn("w-4 h-4 shrink-0", isActive ? "text-primary" : isDone ? "text-green-500/70" : "opacity-70")} />
                             <span className="truncate">{item.label}</span>
-                            {isActive && <ChevronRight className="w-3 h-3 ml-auto text-primary shrink-0" />}
+                            {isActive ? (
+                              <ChevronRight className="w-3 h-3 ml-auto text-primary shrink-0" />
+                            ) : isDone ? (
+                              <Check className="w-3 h-3 ml-auto text-green-500 shrink-0" />
+                            ) : null}
                           </Link>
                         </li>
                       );

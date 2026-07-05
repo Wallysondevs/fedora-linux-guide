@@ -119,7 +119,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
   cat << EOF > config.txt
   [configuracao]
   nome = fedora
-  versao = 41
+  versao = 44
   EOF
 
   # Heredoc com variáveis (expandidas)

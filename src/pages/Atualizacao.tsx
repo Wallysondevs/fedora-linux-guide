@@ -47,7 +47,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 
   # Saída exemplo:
   # firefox.x86_64           121.0-2.fc41     updates
-  # kernel.x86_64            6.11.5-301.fc41  updates
+  # kernel.x86_64            6.16.3-200.fc41  updates
   # vim-enhanced.x86_64      9.1.0-1.fc41     updates
   # Código de saída: 100 = há atualizações, 0 = sistema atualizado
 
@@ -143,7 +143,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 
         <h2><ArrowUpCircle className="inline-block mr-2 mb-1 w-5 h-5" /> Upgrade de Versão do Fedora</h2>
         <p>
-          O Fedora lança uma nova versão a cada ~6 meses. Você pode fazer o upgrade sem reinstalar o sistema. Por exemplo, de Fedora 40 para Fedora 41:
+          O Fedora lança uma nova versão a cada ~6 meses. Você pode fazer o upgrade sem reinstalar o sistema. Por exemplo, de Fedora 43 para Fedora 44:
         </p>
         <CodeBlock
           code={`# Passo 1: Atualizar o sistema atual completamente
@@ -154,10 +154,10 @@ import { PageContainer } from "@/components/layout/PageContainer";
   sudo dnf install dnf-plugin-system-upgrade
 
   # Passo 3: Baixar os pacotes da nova versão
-  sudo dnf system-upgrade download --releasever=41
+  sudo dnf system-upgrade download --releasever=44
 
   # Se houver conflitos, tente:
-  sudo dnf system-upgrade download --releasever=41 --allowerasing
+  sudo dnf system-upgrade download --releasever=44 --allowerasing
 
   # Passo 4: Iniciar o upgrade (reinicia o sistema)
   sudo dnf system-upgrade reboot
@@ -206,7 +206,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
   # Se o sistema não boota após atualização de kernel:
   # No GRUB, selecione um kernel anterior
   # Depois, remova o kernel problemático:
-  sudo dnf remove kernel-6.11.5-301.fc41
+  sudo dnf remove kernel-6.16.3-200.fc41
 
   # Com Btrfs: restaurar de um snapshot
   sudo snapper -c root list
